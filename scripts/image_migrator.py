@@ -186,7 +186,7 @@ class WebPMigrator:
         # 匹配 Front Matter 中的 cover 字段图片 URL
         cover_match = re.search(r'^cover:\s*(https?://\S+)', content, re.MULTILINE)
         if cover_match:
-            cover_url = cover_match.group(1).strip().rstrip("'")")  # 去除可能的引号
+            cover_url = cover_match.group(1).strip().strip(chr(39) + chr(34))  # 去除可能的引号
             if cover_url and cover_url not in unique_urls:
                 unique_urls.append(cover_url)
                 print(f"  🖼️ 发现封面图片: {cover_url[:60]}...")
