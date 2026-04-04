@@ -20,22 +20,26 @@ class StatusManager:
         self.status = self._load_status()
     
     def _load_status(self) -> Dict[str, Any]:
-        """加载状态文件"""
-        if self.status_file.exists():
-            with open(self.status_file, 'r', encoding='utf-8') as f:
-                return json.load(f)
-        
-        # 初始化默认状态
-        return {
+        """加载状态文件，并强制用环境变量同步可配置项"""
+        default_status = {
             "total": 0,
             "processed": 0,
             "failed": 0,
             "last_processed": None,
             "daily_limit": int(os.getenv('DAILY_LIMIT', '2')),
-            "history": [],  # 处理历史记录
+            "history": [],
             "articles": {}
         }
-    
+
+        if self.status_file.exists():
+            with open(self.status_file, 'r', encoding='utf-8') as f:
+                status = json.load(f)
+            # 强制用环境变量覆盖可配置项，确保 workflow 修改立即生效
+            status["daily_limit"] = default_status["daily_limit"]
+            return status
+
+        return default_status
+
     def save(self):
         """保存状态文件"""
         with open(self.status_file, 'w', encoding='utf-8') as f:
