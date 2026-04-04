@@ -146,20 +146,22 @@ class ArticleProcessor:
         raise FileNotFoundError("未找到提示词模板文件 prompts/transform.txt")
     
     def _extract_system_prompt(self) -> str:
-        """从模板中提取系统提示词（--- 之前的部分）"""
+        """从模板中提取系统提示词（第一段，--- 之前的部分）"""
         if '---' in self.prompt_template:
             return self.prompt_template.split('---')[0].strip()
         return "你是一个专业的内容编辑。"
     
     def _get_user_prompt(self, content: str) -> str:
-        """构建用户提示词"""
-        # 查找模板中的占位符部分
+        """构建用户提示词
+        
+        将模板中系统提示词（第一个 --- 之前）之后的所有内容作为用户提示词，
+        并将 {content} 占位符替换为实际文章内容。
+        """
         if '{content}' in self.prompt_template:
-            # 使用 --- 分隔后的部分作为用户提示词模板
-            parts = self.prompt_template.split('---')
-            if len(parts) > 1:
-                user_template = parts[1].strip()
-                return user_template.replace('{content}', content)
+            # 找到第一个 ---，将其后的所有内容作为用户提示词
+            first_separator_idx = self.prompt_template.index('---')
+            user_template = self.prompt_template[first_separator_idx + 3:].strip()
+            return user_template.replace('{content}', content)
         
         # 直接使用整个模板
         return self.prompt_template.replace('{content}', content)

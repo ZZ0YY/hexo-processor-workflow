@@ -76,7 +76,7 @@ def check_front_matter(content: str) -> Dict:
     if author_match:
         author = author_match.group(1).strip()
         if author != "惠州仲恺中学":
-            warnings.append(f"⚠️ 作者应为"惠州仲恺中学"，当前为"{author}"")
+            warnings.append(f'⚠️ 作者应为\'惠州仲恺中学\'，当前为\'{author}\'')
     
     # 检查分类是否在允许列表中
     category_match = re.search(r'^categories:\s*\n(\s+-\s+.+\n?)+', front_matter, re.MULTILINE)
@@ -86,7 +86,7 @@ def check_front_matter(content: str) -> Dict:
         for cat in found_categories:
             cat = cat.strip()
             if cat not in VALID_CATEGORIES:
-                issues.append(f"❌ 无效分类: "{cat}"，必须从分类体系中选择")
+                issues.append(f'❌ 无效分类: \'{cat}\'，必须从分类体系中选择')
     else:
         issues.append("❌ 分类格式错误或为空")
     

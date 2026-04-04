@@ -31,15 +31,24 @@ class WebPMigrator:
     """微信图片迁移器"""
     
     def __init__(self, config: Dict = None):
-        # 从环境变量或配置获取参数
-        self.host_url = os.getenv('IMAGE_HOST_URL', config.get('host_url', 'https://photo.20080601.xyz') if config else 'https://photo.20080601.xyz')
-        self.display_url = os.getenv('IMAGE_DISPLAY_URL', config.get('display_url', 'https://photo1.20080601.xyz') if config else 'https://photo1.20080601.xyz')
-        self.api_token = os.getenv('IMAGE_API_TOKEN', config.get('api_token', '') if config else '')
-        self.upload_channel = os.getenv('IMAGE_UPLOAD_CHANNEL', 'telegram')
-        self.target_folder = os.getenv('IMAGE_TARGET_FOLDER', 'wx')
+        # 从环境变量或配置获取参数（空字符串视为未设置，使用默认值）
+        _host_url = os.getenv('IMAGE_HOST_URL', '') or (config.get('host_url', 'https://photo.20080601.xyz') if config else 'https://photo.20080601.xyz')
+        _display_url = os.getenv('IMAGE_DISPLAY_URL', '') or (config.get('display_url', 'https://photo1.20080601.xyz') if config else 'https://photo1.20080601.xyz')
+        _api_token = os.getenv('IMAGE_API_TOKEN', '') or (config.get('api_token', '') if config else '')
+        self.host_url = _host_url
+        self.display_url = _display_url
+        self.api_token = _api_token
+        self.upload_channel = os.getenv('IMAGE_UPLOAD_CHANNEL', '') or 'telegram'
+        self.target_folder = os.getenv('IMAGE_TARGET_FOLDER', '') or 'wx'
         
         self.upload_api_url = f"{self.host_url}/upload"
         self.cache_file = "image_migration_cache.json"
+        
+        # 验证必要参数
+        if not self.host_url:
+            print("⚠️ IMAGE_HOST_URL 未配置，图片上传将无法工作")
+        if not self.api_token:
+            print("⚠️ IMAGE_API_TOKEN 未配置，图片上传将无法工作")
         
         # 统计数据
         self.stats = {

@@ -112,20 +112,30 @@ class StatusManager:
             self.save()
             print(f"Added {len(new_articles)} new articles to tracking (sorted by date, newest first)")
     
-    def get_pending_articles(self, count: int = 2) -> List[Dict[str, Any]]:
-        """获取待处理的文章（按日期排序，新文章优先）"""
+    def get_pending_articles(self, count: int = 2, force: bool = False) -> List[Dict[str, Any]]:
+        """获取待处理的文章（按日期排序，新文章优先）
+        
+        Args:
+            count: 获取文章数量
+            force: 是否强制重新处理已完成的文章
+        """
         pending = []
         
-        # 收集所有待处理文章
-        for article_id, article in self.status["articles"].items():
-            if article["status"] == "pending" and article["attempts"] < 3:
-                pending.append(article)
-        
-        # 如果没有待处理的，检查失败但可重试的
-        if not pending:
+        if force:
+            # 强制模式：包含所有文章（包括已完成的）
             for article_id, article in self.status["articles"].items():
-                if article["status"] == "failed" and article["attempts"] < 3:
+                pending.append(article)
+        else:
+            # 收集所有待处理文章
+            for article_id, article in self.status["articles"].items():
+                if article["status"] == "pending" and article["attempts"] < 3:
                     pending.append(article)
+            
+            # 如果没有待处理的，检查失败但可重试的
+            if not pending:
+                for article_id, article in self.status["articles"].items():
+                    if article["status"] == "failed" and article["attempts"] < 3:
+                        pending.append(article)
         
         # 按源文件日期排序（新文章优先）
         def get_sort_key(article):

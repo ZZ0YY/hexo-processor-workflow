@@ -24,7 +24,7 @@ def main():
     manager.initialize_from_raw_articles()
     
     # 获取待处理文章（已按日期降序排序）
-    pending = manager.get_pending_articles(count=args.count)
+    pending = manager.get_pending_articles(count=args.count, force=args.force)
     
     if pending:
         set_github_output('has_articles', 'true')
