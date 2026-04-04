@@ -1,0 +1,227 @@
+# Hexo 文章自动处理工作流
+# 每天 UTC 00:00 (北京时间 08:00) 触发，处理 1-2 篇文章
+# 处理完成后创建 PR 供人工审核
+
+name: Hexo Article Processor
+
+on:
+  # 定时触发：每天 UTC 00:00 (北京时间 08:00)
+  schedule:
+    - cron: '0 0 * * *'
+  
+  # 手动触发：支持指定处理数量
+  workflow_dispatch:
+    inputs:
+      count:
+        description: '本次处理文章数量'
+        required: false
+        default: '2'
+        type: string
+      force:
+        description: '强制重新处理已完成的文章'
+        required: false
+        default: 'false'
+        type: boolean
+      ai_provider:
+        description: 'AI 服务提供商'
+        required: false
+        default: 'gemini'
+        type: choice
+        options:
+          - gemini
+          - openai
+      skip_image_migration:
+        description: '跳过图片迁移'
+        required: false
+        default: 'false'
+        type: boolean
+
+env:
+  # 每日处理上限（防止意外超支）
+  DAILY_LIMIT: 2
+  # 默认 AI 配置
+  DEFAULT_AI_PROVIDER: 'gemini'
+
+jobs:
+  process-articles:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write      # 允许推送到仓库
+      pull-requests: write # 允许创建 PR
+    
+    steps:
+      # ==================== 步骤1: 检出文章处理仓库 ====================
+      - name: Checkout processor repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # ==================== 步骤2: 设置 Python 环境 ====================
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r scripts/requirements.txt
+
+      # ==================== 步骤3: 检查今日配额 ====================
+      - name: Check daily quota
+        id: quota
+        run: |
+          python scripts/check_quota.py
+        env:
+          DAILY_LIMIT: ${{ env.DAILY_LIMIT }}
+
+      # ==================== 步骤4: 获取待处理文章列表（按日期排序，新文章优先）====================
+      - name: Get pending articles
+        id: pending
+        if: steps.quota.outputs.can_process == 'true'
+        run: |
+          COUNT="${{ github.event.inputs.count || env.DAILY_LIMIT }}"
+          python scripts/get_pending_articles.py --count $COUNT
+        env:
+          FORCE_REPROCESS: ${{ github.event.inputs.force || 'false' }}
+
+      # ==================== 步骤5: AI 处理文章 ====================
+      - name: Process articles with AI
+        id: process
+        if: steps.pending.outputs.has_articles == 'true'
+        run: |
+          python scripts/process_articles.py
+        env:
+          # AI 提供商选择
+          AI_PROVIDER: ${{ github.event.inputs.ai_provider || env.DEFAULT_AI_PROVIDER }}
+          # Gemini API 配置
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # OpenAI API 配置（备用）
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+
+      # ==================== 步骤6: 图片迁移（AI处理后运行，节省图床空间）====================
+      - name: Migrate images to image host
+        id: image_migration
+        if: steps.process.outputs.success == 'true' && github.event.inputs.skip_image_migration != 'true'
+        run: |
+          python scripts/image_migrator.py
+        env:
+          IMAGE_API_TOKEN: ${{ secrets.IMAGE_API_TOKEN }}
+          IMAGE_HOST_URL: ${{ secrets.IMAGE_HOST_URL }}
+          IMAGE_DISPLAY_URL: ${{ secrets.IMAGE_DISPLAY_URL }}
+          IMAGE_UPLOAD_CHANNEL: ${{ vars.IMAGE_UPLOAD_CHANNEL || 'telegram' }}
+          IMAGE_TARGET_FOLDER: ${{ vars.IMAGE_TARGET_FOLDER || 'wx' }}
+
+      # ==================== 步骤7: 质量检查 ====================
+      - name: Quality check
+        if: steps.process.outputs.success == 'true'
+        run: |
+          python scripts/quality_check.py
+
+      # ==================== 步骤8: 创建 Pull Request ====================
+      - name: Create Pull Request to Hexo repository
+        id: create_pr
+        if: steps.process.outputs.success == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          # 目标 Hexo 仓库
+          repository: ${{ secrets.HEXO_REPO }}
+          # 需要有写权限的 PAT
+          token: ${{ secrets.HEXO_REPO_TOKEN }}
+          # 分支命名
+          branch: auto-processed/articles-${{ github.run_number }}
+          # PR 标题和内容
+          title: |
+            🤖 AI处理文章 - ${{ github.run_number }} ($(date '+%Y-%m-%d'))
+          body: |
+            ## 📝 自动处理的文章
+            
+            **处理时间**: $(date '+%Y-%m-%d %H:%M:%S')
+            **处理数量**: ${{ steps.process.outputs.success_count }} 篇
+            **AI 提供商**: ${{ github.event.inputs.ai_provider || 'gemini' }}
+            **图片迁移**: ${{ steps.image_migration.outputs.success == 'true' && '✅ 已完成' || '⏭️ 已跳过' }}
+            
+            ---
+            
+            ### 📋 文章列表
+            
+            ${{ steps.process.outputs.article_list }}
+            
+            ---
+            
+            ### 📊 图片迁移统计
+            
+            ${{ steps.image_migration.outputs.stats }}
+            
+            ---
+            
+            ### ⚠️ 审核要点
+            
+            请人工审核以下内容：
+            - [ ] 标题是否准确、有吸引力
+            - [ ] 分类和标签是否合适
+            - [ ] 图片链接是否有效（已迁移至图床）
+            - [ ] 内容格式是否正确
+            - [ ] 是否有遗漏或错误
+            
+            ---
+            
+            *此 PR 由 GitHub Actions 自动生成，请仔细审核后合并。*
+          # 提交信息
+          commit-message: |
+            feat: 添加 AI 处理的文章
+            
+            - 处理数量: ${{ steps.process.outputs.success_count }} 篇
+            - 处理日期: $(date '+%Y-%m-%d')
+            - AI 提供商: ${{ github.event.inputs.ai_provider || env.DEFAULT_AI_PROVIDER }}
+            - 图片迁移: ${{ steps.image_migration.outputs.success == 'true' && '已完成' || '已跳过' }}
+          # 标签
+          labels: |
+            auto-processed
+            needs-review
+          # 审核者（可选）
+          reviewers: ${{ secrets.PR_REVIEWERS }}
+          # 草稿 PR
+          draft: false
+
+      # ==================== 步骤9: 提交状态更新到处理仓库 ====================
+      - name: Commit status update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # 提交状态文件、处理后的文章和图片缓存
+          if git diff --quiet status.json processed/ image_migration_cache.json; then
+            echo "No status changes to commit"
+          else
+            git add status.json processed/ image_migration_cache.json 2>/dev/null || true
+            git commit -m "chore: update processing status - $(date '+%Y-%m-%d')"
+            git push
+          fi
+
+      # ==================== 步骤10: 输出 PR 信息 ====================
+      - name: Output PR info
+        if: steps.create_pr.outputs.pull-request-number
+        run: |
+          echo "### 🎉 Pull Request 已创建" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **PR 编号**: #${{ steps.create_pr.outputs.pull-request-number }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **PR 链接**: ${{ steps.create_pr.outputs.pull-request-url }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **分支**: ${{ steps.create_pr.outputs.pull-request-head-branch }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "请前往 Hexo 仓库审核并合并此 PR。" >> $GITHUB_STEP_SUMMARY
+
+      # ==================== 步骤11: 生成处理报告 ====================
+      - name: Generate report
+        if: always()
+        run: |
+          python scripts/generate_report.py >> $GITHUB_STEP_SUMMARY
+
+      # ==================== 步骤12: 失败通知 ====================
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "::warning::Article processing failed. Check the logs for details."
+          # 可扩展：添加邮件、Telegram、企业微信等通知
