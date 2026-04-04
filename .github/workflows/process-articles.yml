@@ -38,7 +38,7 @@ on:
 
 env:
   # 每日处理上限（防止意外超支）
-  DAILY_LIMIT: 2
+  DAILY_LIMIT: 50
   # 默认 AI 配置
   DEFAULT_AI_PROVIDER: 'gemini'
   # Gemini 模型配置（使用 gemini-2.5-flash-lite）
