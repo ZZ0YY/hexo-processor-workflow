@@ -31,6 +31,16 @@
       "article_id": "[2025-09-02]金秋启航筑远志开学逐梦展新篇惠州仲恺中学举行2025年秋季学期开学典礼",
       "status": "failed",
       "error": "Gemini API 调用失败: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+    },
+    {
+      "date": "2026-04-04T17:44:59.721470",
+      "article_id": "[2025-09-19]致敬榜样力量 砥砺逐梦前行惠州仲恺中学20242025学年第二学期惠州市高中",
+      "status": "completed"
+    },
+    {
+      "date": "2026-04-04T17:45:11.578518",
+      "article_id": "[2025-09-10]以教育家精神赋能师资仲恺中学绘就教育强国新篇惠州仲恺中学举行2025年教师节",
+      "status": "completed"
     }
   ],
   "articles": {
@@ -39,23 +49,23 @@
       "source": "raw-articles/[2025-09-19]致敬榜样力量 砥砺逐梦前行惠州仲恺中学20242025学年第二学期惠州市高中.md",
       "source_date": "2025-09-19",
       "status": "completed",
-      "processed_at": "2026-04-04T17:31:36.643093",
+      "processed_at": "2026-04-04T17:44:59.721453",
       "output": "processed/2025-09-15-惠州仲恺中学隆重举行期末考试表彰大会致敬榜样力量.md",
       "title": "惠州仲恺中学隆重举行期末考试表彰大会，致敬榜样力量",
       "error": null,
-      "attempts": 2,
+      "attempts": 3,
       "images_migrated": false
     },
     "[2025-09-10]以教育家精神赋能师资仲恺中学绘就教育强国新篇惠州仲恺中学举行2025年教师节": {
       "id": "[2025-09-10]以教育家精神赋能师资仲恺中学绘就教育强国新篇惠州仲恺中学举行2025年教师节",
       "source": "raw-articles/[2025-09-10]以教育家精神赋能师资仲恺中学绘就教育强国新篇惠州仲恺中学举行2025年教师节.md",
       "source_date": "2025-09-10",
-      "status": "failed",
-      "processed_at": "2026-04-04T16:59:26.048579",
-      "output": "processed/2025-09-10-仲恺中学隆重举行第41届教师节大会以教育家精神赋能师资.md",
-      "title": "仲恺中学隆重举行第41届教师节大会，以教育家精神赋能师资",
+      "status": "completed",
+      "processed_at": "2026-04-04T17:45:11.578499",
+      "output": "processed/2025-09-10-仲恺中学隆重举行第41届教师节大会以教育家精神铸魂强师.md",
+      "title": "仲恺中学隆重举行第41届教师节大会，以教育家精神铸魂强师",
       "error": "Gemini API 调用失败: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-      "attempts": 2,
+      "attempts": 3,
       "images_migrated": false
     },
     "[2025-09-02]金秋启航筑远志开学逐梦展新篇惠州仲恺中学举行2025年秋季学期开学典礼": {
