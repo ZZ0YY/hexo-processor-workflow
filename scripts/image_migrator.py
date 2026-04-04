@@ -9,6 +9,7 @@ import os
 import requests
 import time
 import json
+import sys
 from io import BytesIO
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional
@@ -20,6 +21,10 @@ try:
 except ImportError:
     PIL_AVAILABLE = False
     print("⚠️ Pillow 未安装，将跳过 WebP 转换")
+
+# 添加脚本目录到路径
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from github_utils import set_github_output
 
 
 class WebPMigrator:
@@ -274,7 +279,6 @@ class WebPMigrator:
 
 def main():
     """主函数 - 处理 processed 目录下的所有文件"""
-    import sys
     
     # 获取待处理的文件列表
     if len(sys.argv) > 1:
@@ -288,19 +292,19 @@ def main():
             files = [str(f) for f in files]
         else:
             print("❌ 未找到 processed 目录")
-            print("::set-output name=success::false")
+            set_github_output('success', 'false')
             return
     
     if not files:
         print("❌ 没有待处理的文件")
-        print("::set-output name=success::false")
+        set_github_output('success', 'false')
         return
     
     # 检查必要的环境变量
     api_token = os.getenv('IMAGE_API_TOKEN')
     if not api_token:
         print("❌ 未设置 IMAGE_API_TOKEN 环境变量")
-        print("::set-output name=success::false")
+        set_github_output('success', 'false')
         return
     
     # 创建迁移器并处理
@@ -315,17 +319,15 @@ def main():
     
     # 输出 GitHub Actions 变量
     success = stats['failed'] == 0 or stats['success'] > 0
-    print(f"::set-output name=success::{str(success).lower()}")
+    set_github_output('success', str(success).lower())
     
     # 生成统计信息（用于 PR 描述）
-    stats_md = f"""
-- 📄 处理文件: {stats['total_files']} 个
+    stats_md = f"""- 📄 处理文件: {stats['total_files']} 个
 - ✅ 成功上传: {stats['success']}
 - 🖼️ WebP 转换: {stats['converted']}
 - ⏩ 缓存命中: {stats['skipped']}
-- ❌ 失败数量: {stats['failed']}
-"""
-    print(f"::set-output name=stats::{stats_md}")
+- ❌ 失败数量: {stats['failed']}"""
+    set_github_output('stats', stats_md)
 
 
 if __name__ == "__main__":

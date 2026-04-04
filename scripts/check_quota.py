@@ -8,6 +8,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from status_manager import StatusManager
+from github_utils import set_github_output
 
 
 def main():
@@ -15,10 +16,10 @@ def main():
     manager.initialize_from_raw_articles()
     
     if manager.check_daily_quota():
-        print("::set-output name=can_process::true")
+        set_github_output('can_process', 'true')
         print("✅ 今日仍有处理配额")
     else:
-        print("::set-output name=can_process::false")
+        set_github_output('can_process', 'false')
         print("⚠️ 今日处理配额已用完")
     
     stats = manager.get_statistics()

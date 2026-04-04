@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 AI 文章处理脚本 - 使用 AI 将微信公众号文章转换为 Hexo 格式
-支持 OpenAI 和 Gemini API
+支持 OpenAI 和 Gemini API（新版 google-genai SDK）
 """
 
 import json
@@ -16,6 +16,22 @@ from typing import Optional, Dict, Any, List
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from status_manager import StatusManager
+
+
+def set_github_output(name: str, value: str):
+    """设置 GitHub Actions 输出（使用新的环境文件方式）"""
+    # 写入 GITHUB_OUTPUT 环境文件
+    github_output = os.getenv('GITHUB_OUTPUT')
+    if github_output:
+        with open(github_output, 'a', encoding='utf-8') as f:
+            # 多行值需要特殊处理
+            if '\n' in value:
+                # 使用 heredoc 语法
+                f.write(f"{name}<<EOF\n{value}\nEOF\n")
+            else:
+                f.write(f"{name}={value}\n")
+    # 同时打印到控制台（用于本地调试）
+    print(f"📋 {name}: {value[:100]}{'...' if len(value) > 100 else ''}")
 
 
 class AIProvider:
@@ -64,35 +80,32 @@ class OpenAIProvider(AIProvider):
 
 
 class GeminiProvider(AIProvider):
-    """Google Gemini API 提供商"""
+    """Google Gemini API 提供商（使用新版 google-genai SDK）"""
     
     def __init__(self):
-        import google.generativeai as genai
+        from google import genai
         
         self.api_key = os.getenv('GEMINI_API_KEY')
         if not self.api_key:
             raise ValueError("GEMINI_API_KEY 环境变量未设置")
         
-        genai.configure(api_key=self.api_key)
-        self.genai = genai
-        self.model = os.getenv('GEMINI_MODEL', 'gemini-2.0-flash')
-        
-        # 配置生成参数
-        self.generation_config = genai.GenerationConfig(
-            temperature=0.3,
-            max_output_tokens=8192,
-        )
+        # 使用新版 SDK 创建客户端
+        self.client = genai.Client(api_key=self.api_key)
+        self.model = os.getenv('GEMINI_MODEL', 'gemini-2.5-flash-lite')
     
     def chat(self, system_prompt: str, user_prompt: str) -> str:
         """发送 Gemini 聊天请求"""
         try:
-            model = self.genai.GenerativeModel(
-                model_name=self.model,
-                generation_config=self.generation_config,
-                system_instruction=system_prompt
+            # 使用新版 SDK 的 API
+            response = self.client.models.generate_content(
+                model=self.model,
+                contents=user_prompt,
+                config={
+                    'system_instruction': system_prompt,
+                    'temperature': 0.3,
+                    'max_output_tokens': 8192,
+                }
             )
-            
-            response = model.generate_content(user_prompt)
             return response.text
         except Exception as e:
             raise RuntimeError(f"Gemini API 调用失败: {str(e)}")
@@ -277,7 +290,7 @@ def main():
     # 读取待处理文章列表
     pending_path = Path("pending_articles.json")
     if not pending_path.exists():
-        print("::set-output name=success::false")
+        set_github_output('success', 'false')
         print("❌ 未找到待处理文章列表")
         return
     
@@ -285,7 +298,7 @@ def main():
         pending_articles = json.load(f)
     
     if not pending_articles:
-        print("::set-output name=success::false")
+        set_github_output('success', 'false')
         print("❌ 没有待处理的文章")
         return
     
@@ -293,9 +306,10 @@ def main():
     
     try:
         processor = ArticleProcessor(provider=ai_provider)
+        print(f"📦 使用模型: {processor.provider.get_model_name()}")
     except Exception as e:
         print(f"❌ AI 提供商初始化失败: {str(e)}")
-        print("::set-output name=success::false")
+        set_github_output('success', 'false')
         return
     
     results = []
@@ -325,15 +339,15 @@ def main():
     print(f"  - 成功: {success_count}")
     print(f"  - 失败: {fail_count}")
     
-    # 设置 GitHub Actions 输出
-    print(f"::set-output name=success::{'true' if success_count > 0 else 'false'}")
-    print(f"::set-output name=success_count::{success_count}")
-    # 多行输出需要特殊处理
+    # 设置 GitHub Actions 输出（使用新的环境文件方式）
+    set_github_output('success', 'true' if success_count > 0 else 'false')
+    set_github_output('success_count', str(success_count))
+    
+    # 保存文章列表到文件
     article_list = '\n'.join(article_list_md)
-    # 写入文件供后续步骤使用
     with open('article_list.md', 'w', encoding='utf-8') as f:
         f.write(article_list)
-    print(f"::set-output name=article_list::{article_list}")
+    set_github_output('article_list', article_list)
 
 
 if __name__ == "__main__":

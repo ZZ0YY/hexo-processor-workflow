@@ -11,6 +11,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from status_manager import StatusManager
+from github_utils import set_github_output
 
 
 def main():
@@ -26,7 +27,7 @@ def main():
     pending = manager.get_pending_articles(count=args.count)
     
     if pending:
-        print("::set-output name=has_articles::true")
+        set_github_output('has_articles', 'true')
         print(f"\n📝 本次将处理 {len(pending)} 篇文章（按日期排序，新文章优先）:\n")
         
         for i, article in enumerate(pending, 1):
@@ -37,7 +38,7 @@ def main():
         with open('pending_articles.json', 'w', encoding='utf-8') as f:
             json.dump(pending, f, ensure_ascii=False, indent=2)
     else:
-        print("::set-output name=has_articles::false")
+        set_github_output('has_articles', 'false')
         print("\n✅ 没有待处理的文章")
     
     # 显示统计信息
