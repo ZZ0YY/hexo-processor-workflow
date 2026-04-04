@@ -52,7 +52,7 @@ jobs:
       pull-requests: write # 允许创建 PR
     
     steps:
-      # ==================== 步骤1: 检出文章处理仓库 ====================
+      # ==================== 步骤1: 检出工作流仓库 ====================
       - name: Checkout processor repository
         uses: actions/checkout@v4
         with:
@@ -84,7 +84,11 @@ jobs:
         if: steps.quota.outputs.can_process == 'true'
         run: |
           COUNT="${{ github.event.inputs.count || env.DAILY_LIMIT }}"
-          python scripts/get_pending_articles.py --count $COUNT
+          FORCE_FLAG=""
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            FORCE_FLAG="--force"
+          fi
+          python scripts/get_pending_articles.py --count $COUNT $FORCE_FLAG
         env:
           FORCE_REPROCESS: ${{ github.event.inputs.force || 'false' }}
 
@@ -123,25 +127,53 @@ jobs:
         run: |
           python scripts/quality_check.py
 
-      # ==================== 步骤8: 创建 Pull Request ====================
+      # ==================== 步骤8: 记录当前日期（用于 commit message）====================
+      - name: Record current date
+        if: steps.process.outputs.success == 'true'
+        id: date
+        run: echo "today=$(date '+%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+      # ==================== 步骤9: 检出目标 Hexo 仓库（用于创建 PR）====================
+      - name: Checkout target Hexo repository
+        if: steps.process.outputs.success == 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.HEXO_REPO }}
+          token: ${{ secrets.HEXO_REPO_TOKEN }}
+          path: hexo-target
+          fetch-depth: 0
+
+      # ==================== 步骤10: 复制处理后的文章到目标仓库 ====================
+      - name: Copy processed articles to target repo
+        if: steps.process.outputs.success == 'true'
+        run: |
+          # 确保目标目录存在（Hexo 博客的文章目录）
+          TARGET_DIR="hexo-target/source/_posts"
+          mkdir -p "$TARGET_DIR"
+          
+          # 复制所有处理后的文章
+          cp -v processed/*.md "$TARGET_DIR/"
+          echo "✅ 已复制 $(ls processed/*.md 2>/dev/null | wc -l) 篇文章到 $TARGET_DIR"
+
+      # ==================== 步骤11: 创建 Pull Request（在目标仓库中）====================
       - name: Create Pull Request to Hexo repository
         id: create_pr
         if: steps.process.outputs.success == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
-          # 目标 Hexo 仓库
-          repository: ${{ secrets.HEXO_REPO }}
-          # 需要有写权限的 PAT
+          # 关键：指定工作目录为目标仓库
+          path: hexo-target
+          # 使用目标仓库的 token
           token: ${{ secrets.HEXO_REPO_TOKEN }}
           # 分支命名
           branch: auto-processed/articles-${{ github.run_number }}
           # PR 标题和内容
           title: |
-            🤖 AI处理文章 - ${{ github.run_number }} ($(date '+%Y-%m-%d'))
+            🤖 AI处理文章 - ${{ github.run_number }} (${{ steps.date.outputs.today }})
           body: |
             ## 📝 自动处理的文章
             
-            **处理时间**: $(date '+%Y-%m-%d %H:%M:%S')
+            **处理时间**: ${{ steps.date.outputs.today }}
             **处理数量**: ${{ steps.process.outputs.success_count }} 篇
             **AI 提供商**: ${{ github.event.inputs.ai_provider || 'gemini' }}
             **模型**: ${{ env.GEMINI_MODEL }}
@@ -178,7 +210,7 @@ jobs:
             feat: 添加 AI 处理的文章
             
             - 处理数量: ${{ steps.process.outputs.success_count }} 篇
-            - 处理日期: $(date '+%Y-%m-%d')
+            - 处理日期: ${{ steps.date.outputs.today }}
             - AI 提供商: ${{ github.event.inputs.ai_provider || env.DEFAULT_AI_PROVIDER }}
             - 图片迁移: ${{ steps.image_migration.outputs.success == 'true' && '已完成' || '已跳过' }}
           # 标签
@@ -190,8 +222,9 @@ jobs:
           # 草稿 PR
           draft: false
 
-      # ==================== 步骤9: 提交状态更新到处理仓库 ====================
+      # ==================== 步骤12: 提交状态更新到处理仓库 ====================
       - name: Commit status update
+        if: always() && steps.process.outputs.success == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -201,11 +234,11 @@ jobs:
             echo "No status changes to commit"
           else
             git add status.json processed/ image_migration_cache.json 2>/dev/null || true
-            git commit -m "chore: update processing status - $(date '+%Y-%m-%d')"
+            git commit -m "chore: update processing status - ${{ steps.date.outputs.today }}"
             git push
           fi
 
-      # ==================== 步骤10: 输出 PR 信息 ====================
+      # ==================== 步骤13: 输出 PR 信息 ====================
       - name: Output PR info
         if: steps.create_pr.outputs.pull-request-number
         run: |
@@ -217,13 +250,13 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "请前往 Hexo 仓库审核并合并此 PR。" >> $GITHUB_STEP_SUMMARY
 
-      # ==================== 步骤11: 生成处理报告 ====================
+      # ==================== 步骤14: 生成处理报告 ====================
       - name: Generate report
         if: always()
         run: |
           python scripts/generate_report.py >> $GITHUB_STEP_SUMMARY
 
-      # ==================== 步骤12: 失败通知 ====================
+      # ==================== 步骤15: 失败通知 ====================
       - name: Notify on failure
         if: failure()
         run: |

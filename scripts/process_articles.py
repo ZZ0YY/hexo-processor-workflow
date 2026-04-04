@@ -216,6 +216,29 @@ class ArticleProcessor:
         
         return self.provider.chat(self.system_prompt, user_prompt)
     
+    def _clean_ai_output(self, content: str) -> str:
+        """清理 AI 输出，去除可能包裹的 markdown 代码块
+        
+        AI 模型有时会把输出包裹在 ```markdown ... ``` 中，
+        导致 Front Matter 的 --- 不在文件开头，需要去除。
+        """
+        content = content.strip()
+        
+        # 检查是否被代码块包裹
+        code_block_pattern = r'^```(?:markdown|md)?\s*\n(.*?)\n```\s*$'
+        match = re.match(code_block_pattern, content, re.DOTALL)
+        if match:
+            content = match.group(1).strip()
+            print(f"  🧹 已去除 AI 输出的 markdown 代码块包裹")
+        
+        # 去除开头的注释（如果有的话）
+        lines = content.split('\n')
+        while lines and lines[0].strip().startswith('<!--'):
+            lines.pop(0)
+        content = '\n'.join(lines).strip()
+        
+        return content
+    
     def extract_date_from_processed(self, content: str) -> Optional[str]:
         """从处理后的文章中提取日期"""
         # 从 front matter 中提取日期
@@ -252,6 +275,9 @@ class ArticleProcessor:
             
             # AI 处理
             processed_content = self.process_with_ai(raw_content)
+            
+            # 清理 AI 输出：去除可能的 markdown 代码块包裹
+            processed_content = self._clean_ai_output(processed_content)
             
             # 从处理结果中提取日期和标题
             extracted_date = self.extract_date_from_processed(processed_content)

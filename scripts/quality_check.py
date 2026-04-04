@@ -28,8 +28,15 @@ def check_front_matter(content: str) -> Dict:
     
     # 检查是否有 Front Matter
     if not content.startswith('---'):
-        issues.append("❌ 缺少 Front Matter")
-        return {"valid": False, "issues": issues, "warnings": warnings}
+        # 可能被 AI 包裹在 ```markdown 代码块中，尝试提取
+        code_block_pattern = r'^```(?:markdown|md)?\s*\n(.*?)\n```\s*$'
+        match = re.match(code_block_pattern, content, re.DOTALL)
+        if match:
+            content = match.group(1).strip()
+            warnings.append("⚠️ 内容被 markdown 代码块包裹，已自动提取")
+        else:
+            issues.append("❌ 缺少 Front Matter")
+            return {"valid": False, "issues": issues, "warnings": warnings}
     
     # 提取 Front Matter
     match = re.match(r'^---\n(.*?)\n---', content, re.DOTALL)
