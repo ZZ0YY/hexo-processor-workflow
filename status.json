@@ -1,6 +1,6 @@
 {
   "total": 5,
-  "processed": 1,
+  "processed": 2,
   "failed": 0,
   "last_processed": "2026-04-04",
   "daily_limit": 2,
@@ -8,6 +8,11 @@
     {
       "date": "2026-04-04T16:48:59.230798",
       "article_id": "[2025-09-19]致敬榜样力量 砥砺逐梦前行惠州仲恺中学20242025学年第二学期惠州市高中",
+      "status": "completed"
+    },
+    {
+      "date": "2026-04-04T16:59:26.048595",
+      "article_id": "[2025-09-10]以教育家精神赋能师资仲恺中学绘就教育强国新篇惠州仲恺中学举行2025年教师节",
       "status": "completed"
     }
   ],
@@ -28,12 +33,12 @@
       "id": "[2025-09-10]以教育家精神赋能师资仲恺中学绘就教育强国新篇惠州仲恺中学举行2025年教师节",
       "source": "raw-articles/[2025-09-10]以教育家精神赋能师资仲恺中学绘就教育强国新篇惠州仲恺中学举行2025年教师节.md",
       "source_date": "2025-09-10",
-      "status": "pending",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-04-04T16:59:26.048579",
+      "output": "processed/2025-09-10-仲恺中学隆重举行第41届教师节大会以教育家精神赋能师资.md",
+      "title": "仲恺中学隆重举行第41届教师节大会，以教育家精神赋能师资",
       "error": null,
-      "attempts": 0,
+      "attempts": 1,
       "images_migrated": false
     },
     "[2025-09-02]金秋启航筑远志开学逐梦展新篇惠州仲恺中学举行2025年秋季学期开学典礼": {
