@@ -183,6 +183,14 @@ class WebPMigrator:
         matches = re.findall(r'!\[(.*?)\]\((http.*?)\)', content)
         unique_urls = list(set([url for _, url in matches]))
         
+        # 匹配 Front Matter 中的 cover 字段图片 URL
+        cover_match = re.search(r'^cover:\s*(https?://\S+)', content, re.MULTILINE)
+        if cover_match:
+            cover_url = cover_match.group(1).strip().rstrip("'")")  # 去除可能的引号
+            if cover_url and cover_url not in unique_urls:
+                unique_urls.append(cover_url)
+                print(f"  🖼️ 发现封面图片: {cover_url[:60]}...")
+        
         # 排除已经处理过的图片
         pending_urls = [
             u for u in unique_urls 
