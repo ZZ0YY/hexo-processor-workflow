@@ -1,6 +1,6 @@
 {
   "total": 23,
-  "processed": 14,
+  "processed": 17,
   "failed": 2,
   "last_processed": "2026-04-05",
   "daily_limit": 50,
@@ -100,6 +100,21 @@
     {
       "date": "2026-04-05T08:40:46.262846",
       "article_id": "[2025-12-31]让力看得见AI助力牛顿第二定律理解我校联合仲恺高级中学仲恺区郭海滨名教师工作",
+      "status": "completed"
+    },
+    {
+      "date": "2026-04-05T09:04:45.431730",
+      "article_id": "[2025-12-30]惠州仲恺中学元旦假期致学生家长的一封信",
+      "status": "completed"
+    },
+    {
+      "date": "2026-04-05T09:05:08.973890",
+      "article_id": "[2025-12-23]飞扬青春活力仲中惠州仲恺中学第十六届田径运动会胜利举行",
+      "status": "completed"
+    },
+    {
+      "date": "2026-04-05T09:05:13.681094",
+      "article_id": "[2025-12-15]惠州仲恺中学急聘高中语文临聘教师公告",
       "status": "completed"
     }
   ],
@@ -288,36 +303,36 @@
       "id": "[2025-12-30]惠州仲恺中学元旦假期致学生家长的一封信",
       "source": "raw-articles/[2025-12-30]惠州仲恺中学元旦假期致学生家长的一封信.md",
       "source_date": "2025-12-30",
-      "status": "pending",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-04-05T09:04:45.431709",
+      "output": "processed/2025-12-30-惠州仲恺中学元旦假期安全指南守护学生平安快乐成长.md",
+      "title": "惠州仲恺中学：元旦假期安全指南，守护学生平安快乐成长",
       "error": null,
-      "attempts": 0,
+      "attempts": 1,
       "images_migrated": false
     },
     "[2025-12-23]飞扬青春活力仲中惠州仲恺中学第十六届田径运动会胜利举行": {
       "id": "[2025-12-23]飞扬青春活力仲中惠州仲恺中学第十六届田径运动会胜利举行",
       "source": "raw-articles/[2025-12-23]飞扬青春活力仲中惠州仲恺中学第十六届田径运动会胜利举行.md",
       "source_date": "2025-12-23",
-      "status": "pending",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-04-05T09:05:08.973871",
+      "output": "processed/2025-12-23-惠州仲恺中学第十六届田径运动会圆满落幕青春活力点燃校园.md",
+      "title": "惠州仲恺中学第十六届田径运动会圆满落幕，青春活力点燃校园",
       "error": null,
-      "attempts": 0,
+      "attempts": 1,
       "images_migrated": false
     },
     "[2025-12-15]惠州仲恺中学急聘高中语文临聘教师公告": {
       "id": "[2025-12-15]惠州仲恺中学急聘高中语文临聘教师公告",
       "source": "raw-articles/[2025-12-15]惠州仲恺中学急聘高中语文临聘教师公告.md",
       "source_date": "2025-12-15",
-      "status": "pending",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-04-05T09:05:13.681052",
+      "output": "processed/2025-12-15-惠州仲恺中学诚聘高中语文临聘教师共筑教育未来.md",
+      "title": "惠州仲恺中学诚聘高中语文临聘教师，共筑教育未来",
       "error": null,
-      "attempts": 0,
+      "attempts": 1,
       "images_migrated": false
     },
     "[2025-12-15]常规检查促规范提质增效助成长惠州仲恺中学教学常规检查评比活动": {
