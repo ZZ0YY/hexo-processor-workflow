@@ -1,6 +1,6 @@
 {
   "total": 23,
-  "processed": 22,
+  "processed": 23,
   "failed": 2,
   "last_processed": "2026-04-05",
   "daily_limit": 50,
@@ -141,6 +141,11 @@
       "date": "2026-04-05T14:36:30.997785",
       "article_id": "[2025-12-01]聚焦新课改共研新课题惠州仲恺中学2025年度省市级课题集中开题",
       "status": "completed"
+    },
+    {
+      "date": "2026-04-05T15:03:08.055577",
+      "article_id": "[2025-09-02]金秋启航筑远志开学逐梦展新篇惠州仲恺中学举行2025年秋季学期开学典礼",
+      "status": "completed"
     }
   ],
   "articles": {
@@ -172,12 +177,12 @@
       "id": "[2025-09-02]金秋启航筑远志开学逐梦展新篇惠州仲恺中学举行2025年秋季学期开学典礼",
       "source": "raw-articles/[2025-09-02]金秋启航筑远志开学逐梦展新篇惠州仲恺中学举行2025年秋季学期开学典礼.md",
       "source_date": "2025-09-02",
-      "status": "failed",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-04-05T15:03:08.055557",
+      "output": "processed/2025-09-02-金秋启航筑远志开学逐梦展新篇惠州仲恺中学2025年秋季学期开学典礼隆重举行.md",
+      "title": "金秋启航筑远志，开学逐梦展新篇——惠州仲恺中学2025年秋季学期开学典礼隆重举行",
       "error": "Gemini API 调用失败: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-      "attempts": 1,
+      "attempts": 2,
       "images_migrated": false
     },
     "[2025-09-01]同心笃行谋发展扬帆逐梦创辉煌惠州仲恺中学召开2025年秋季学期开学全体教职工": {
