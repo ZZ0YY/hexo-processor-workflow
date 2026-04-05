@@ -1,8 +1,8 @@
 {
   "total": 5,
-  "processed": 2,
+  "processed": 4,
   "failed": 2,
-  "last_processed": "2026-04-04",
+  "last_processed": "2026-04-05",
   "daily_limit": 50,
   "history": [
     {
@@ -40,6 +40,16 @@
     {
       "date": "2026-04-04T17:45:11.578518",
       "article_id": "[2025-09-10]以教育家精神赋能师资仲恺中学绘就教育强国新篇惠州仲恺中学举行2025年教师节",
+      "status": "completed"
+    },
+    {
+      "date": "2026-04-05T03:16:35.538899",
+      "article_id": "[2025-09-01]同心笃行谋发展扬帆逐梦创辉煌惠州仲恺中学召开2025年秋季学期开学全体教职工",
+      "status": "completed"
+    },
+    {
+      "date": "2026-04-05T03:16:41.926993",
+      "article_id": "[2025-08-30]情系学子旭日圆梦惠州仲恺中学2025年旭日圆梦助学金颁发大会圆满举行",
       "status": "completed"
     }
   ],
@@ -84,24 +94,24 @@
       "id": "[2025-09-01]同心笃行谋发展扬帆逐梦创辉煌惠州仲恺中学召开2025年秋季学期开学全体教职工",
       "source": "raw-articles/[2025-09-01]同心笃行谋发展扬帆逐梦创辉煌惠州仲恺中学召开2025年秋季学期开学全体教职工.md",
       "source_date": "2025-09-01",
-      "status": "pending",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-04-05T03:16:35.538883",
+      "output": "processed/2025-08-28-惠州仲恺中学召开2025年秋季学期开学教职工大会擘画发展新蓝图.md",
+      "title": "惠州仲恺中学召开2025年秋季学期开学教职工大会，擘画发展新蓝图",
       "error": null,
-      "attempts": 0,
+      "attempts": 1,
       "images_migrated": false
     },
     "[2025-08-30]情系学子旭日圆梦惠州仲恺中学2025年旭日圆梦助学金颁发大会圆满举行": {
       "id": "[2025-08-30]情系学子旭日圆梦惠州仲恺中学2025年旭日圆梦助学金颁发大会圆满举行",
       "source": "raw-articles/[2025-08-30]情系学子旭日圆梦惠州仲恺中学2025年旭日圆梦助学金颁发大会圆满举行.md",
       "source_date": "2025-08-30",
-      "status": "pending",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-04-05T03:16:41.926974",
+      "output": "processed/2025-08-27-旭日圆梦情系学子惠州仲恺中学旭日圆梦助学金颁发大会传递爱与希望.md",
+      "title": "旭日圆梦，情系学子——惠州仲恺中学“旭日圆梦”助学金颁发大会传递爱与希望",
       "error": null,
-      "attempts": 0,
+      "attempts": 1,
       "images_migrated": false
     }
   }
