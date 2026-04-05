@@ -1,6 +1,6 @@
 {
-  "total": 5,
-  "processed": 4,
+  "total": 23,
+  "processed": 6,
   "failed": 2,
   "last_processed": "2026-04-05",
   "daily_limit": 50,
@@ -50,6 +50,16 @@
     {
       "date": "2026-04-05T03:16:41.926993",
       "article_id": "[2025-08-30]情系学子旭日圆梦惠州仲恺中学2025年旭日圆梦助学金颁发大会圆满举行",
+      "status": "completed"
+    },
+    {
+      "date": "2026-04-05T05:21:08.554390",
+      "article_id": "[2026-02-15]杏坛耕耘满庭芳骏马奔腾续华章惠州仲恺中学2025年秋季学期期末教职工大会圆满",
+      "status": "completed"
+    },
+    {
+      "date": "2026-04-05T05:21:23.314098",
+      "article_id": "[2026-02-11]笔墨迎春福满仲中惠州仲恺中学2026年新春送福活动",
       "status": "completed"
     }
   ],
@@ -112,6 +122,222 @@
       "title": "旭日圆梦，情系学子——惠州仲恺中学“旭日圆梦”助学金颁发大会传递爱与希望",
       "error": null,
       "attempts": 1,
+      "images_migrated": false
+    },
+    "[2026-02-15]杏坛耕耘满庭芳骏马奔腾续华章惠州仲恺中学2025年秋季学期期末教职工大会圆满": {
+      "id": "[2026-02-15]杏坛耕耘满庭芳骏马奔腾续华章惠州仲恺中学2025年秋季学期期末教职工大会圆满",
+      "source": "raw-articles/[2026-02-15]杏坛耕耘满庭芳骏马奔腾续华章惠州仲恺中学2025年秋季学期期末教职工大会圆满.md",
+      "source_date": "2026-02-15",
+      "status": "completed",
+      "processed_at": "2026-04-05T05:21:08.554372",
+      "output": "processed/2026-02-15-惠州仲恺中学召开2025年秋季学期期末教职工大会表彰先进擘画未来.md",
+      "title": "惠州仲恺中学召开2025年秋季学期期末教职工大会，表彰先进，擘画未来",
+      "error": null,
+      "attempts": 1,
+      "images_migrated": false
+    },
+    "[2026-02-11]笔墨迎春福满仲中惠州仲恺中学2026年新春送福活动": {
+      "id": "[2026-02-11]笔墨迎春福满仲中惠州仲恺中学2026年新春送福活动",
+      "source": "raw-articles/[2026-02-11]笔墨迎春福满仲中惠州仲恺中学2026年新春送福活动.md",
+      "source_date": "2026-02-11",
+      "status": "completed",
+      "processed_at": "2026-04-05T05:21:23.314075",
+      "output": "processed/2026-02-11-惠州仲恺中学笔墨迎春送福传承中华文化新篇章.md",
+      "title": "惠州仲恺中学：笔墨迎春送福，传承中华文化新篇章",
+      "error": null,
+      "attempts": 1,
+      "images_migrated": false
+    },
+    "[2026-02-08]2026年春季学期教学辅助服务采购项目采购公告": {
+      "id": "[2026-02-08]2026年春季学期教学辅助服务采购项目采购公告",
+      "source": "raw-articles/[2026-02-08]2026年春季学期教学辅助服务采购项目采购公告.md",
+      "source_date": "2026-02-08",
+      "status": "pending",
+      "processed_at": null,
+      "output": null,
+      "title": null,
+      "error": null,
+      "attempts": 0,
+      "images_migrated": false
+    },
+    "[2026-02-06]惠州仲恺中学2026年寒假致学生家长的一封信": {
+      "id": "[2026-02-06]惠州仲恺中学2026年寒假致学生家长的一封信",
+      "source": "raw-articles/[2026-02-06]惠州仲恺中学2026年寒假致学生家长的一封信.md",
+      "source_date": "2026-02-06",
+      "status": "pending",
+      "processed_at": null,
+      "output": null,
+      "title": null,
+      "error": null,
+      "attempts": 0,
+      "images_migrated": false
+    },
+    "[2026-01-26]聚焦智慧教育赋能精准教学我校成功举办智慧教育与三精课堂建设专题讲座": {
+      "id": "[2026-01-26]聚焦智慧教育赋能精准教学我校成功举办智慧教育与三精课堂建设专题讲座",
+      "source": "raw-articles/[2026-01-26]聚焦智慧教育赋能精准教学我校成功举办智慧教育与三精课堂建设专题讲座.md",
+      "source_date": "2026-01-26",
+      "status": "pending",
+      "processed_at": null,
+      "output": null,
+      "title": null,
+      "error": null,
+      "attempts": 0,
+      "images_migrated": false
+    },
+    "[2026-01-26]日新铸锋芒师者竞风流仲恺中学教师篮球队勇夺仲力杯冠军": {
+      "id": "[2026-01-26]日新铸锋芒师者竞风流仲恺中学教师篮球队勇夺仲力杯冠军",
+      "source": "raw-articles/[2026-01-26]日新铸锋芒师者竞风流仲恺中学教师篮球队勇夺仲力杯冠军.md",
+      "source_date": "2026-01-26",
+      "status": "pending",
+      "processed_at": null,
+      "output": null,
+      "title": null,
+      "error": null,
+      "attempts": 0,
+      "images_migrated": false
+    },
+    "[2026-01-22]同心共育科学导航高一年级成功举办选科指导主题家长会": {
+      "id": "[2026-01-22]同心共育科学导航高一年级成功举办选科指导主题家长会",
+      "source": "raw-articles/[2026-01-22]同心共育科学导航高一年级成功举办选科指导主题家长会.md",
+      "source_date": "2026-01-22",
+      "status": "pending",
+      "processed_at": null,
+      "output": null,
+      "title": null,
+      "error": null,
+      "attempts": 0,
+      "images_migrated": false
+    },
+    "[2026-01-06]惠州仲恺中学第二十三届艺术节美术优秀作品展": {
+      "id": "[2026-01-06]惠州仲恺中学第二十三届艺术节美术优秀作品展",
+      "source": "raw-articles/[2026-01-06]惠州仲恺中学第二十三届艺术节美术优秀作品展.md",
+      "source_date": "2026-01-06",
+      "status": "pending",
+      "processed_at": null,
+      "output": null,
+      "title": null,
+      "error": null,
+      "attempts": 0,
+      "images_migrated": false
+    },
+    "[2026-01-04]以赛促研砥砺前行省奖得主陈文君老师的工业烟气脱硫项目式学习备赛之路": {
+      "id": "[2026-01-04]以赛促研砥砺前行省奖得主陈文君老师的工业烟气脱硫项目式学习备赛之路",
+      "source": "raw-articles/[2026-01-04]以赛促研砥砺前行省奖得主陈文君老师的工业烟气脱硫项目式学习备赛之路.md",
+      "source_date": "2026-01-04",
+      "status": "pending",
+      "processed_at": null,
+      "output": null,
+      "title": null,
+      "error": null,
+      "attempts": 0,
+      "images_migrated": false
+    },
+    "[2025-12-31]让力看得见AI助力牛顿第二定律理解我校联合仲恺高级中学仲恺区郭海滨名教师工作": {
+      "id": "[2025-12-31]让力看得见AI助力牛顿第二定律理解我校联合仲恺高级中学仲恺区郭海滨名教师工作",
+      "source": "raw-articles/[2025-12-31]让力看得见AI助力牛顿第二定律理解我校联合仲恺高级中学仲恺区郭海滨名教师工作.md",
+      "source_date": "2025-12-31",
+      "status": "pending",
+      "processed_at": null,
+      "output": null,
+      "title": null,
+      "error": null,
+      "attempts": 0,
+      "images_migrated": false
+    },
+    "[2025-12-30]惠州仲恺中学元旦假期致学生家长的一封信": {
+      "id": "[2025-12-30]惠州仲恺中学元旦假期致学生家长的一封信",
+      "source": "raw-articles/[2025-12-30]惠州仲恺中学元旦假期致学生家长的一封信.md",
+      "source_date": "2025-12-30",
+      "status": "pending",
+      "processed_at": null,
+      "output": null,
+      "title": null,
+      "error": null,
+      "attempts": 0,
+      "images_migrated": false
+    },
+    "[2025-12-23]飞扬青春活力仲中惠州仲恺中学第十六届田径运动会胜利举行": {
+      "id": "[2025-12-23]飞扬青春活力仲中惠州仲恺中学第十六届田径运动会胜利举行",
+      "source": "raw-articles/[2025-12-23]飞扬青春活力仲中惠州仲恺中学第十六届田径运动会胜利举行.md",
+      "source_date": "2025-12-23",
+      "status": "pending",
+      "processed_at": null,
+      "output": null,
+      "title": null,
+      "error": null,
+      "attempts": 0,
+      "images_migrated": false
+    },
+    "[2025-12-15]惠州仲恺中学急聘高中语文临聘教师公告": {
+      "id": "[2025-12-15]惠州仲恺中学急聘高中语文临聘教师公告",
+      "source": "raw-articles/[2025-12-15]惠州仲恺中学急聘高中语文临聘教师公告.md",
+      "source_date": "2025-12-15",
+      "status": "pending",
+      "processed_at": null,
+      "output": null,
+      "title": null,
+      "error": null,
+      "attempts": 0,
+      "images_migrated": false
+    },
+    "[2025-12-15]常规检查促规范提质增效助成长惠州仲恺中学教学常规检查评比活动": {
+      "id": "[2025-12-15]常规检查促规范提质增效助成长惠州仲恺中学教学常规检查评比活动",
+      "source": "raw-articles/[2025-12-15]常规检查促规范提质增效助成长惠州仲恺中学教学常规检查评比活动.md",
+      "source_date": "2025-12-15",
+      "status": "pending",
+      "processed_at": null,
+      "output": null,
+      "title": null,
+      "error": null,
+      "attempts": 0,
+      "images_migrated": false
+    },
+    "[2025-12-08]喜报燃爆赛场我校女足勇夺省赛季军创惠州历史最佳战绩10人斩获国家级运动员证书": {
+      "id": "[2025-12-08]喜报燃爆赛场我校女足勇夺省赛季军创惠州历史最佳战绩10人斩获国家级运动员证书",
+      "source": "raw-articles/[2025-12-08]喜报燃爆赛场我校女足勇夺省赛季军创惠州历史最佳战绩10人斩获国家级运动员证书.md",
+      "source_date": "2025-12-08",
+      "status": "pending",
+      "processed_at": null,
+      "output": null,
+      "title": null,
+      "error": null,
+      "attempts": 0,
+      "images_migrated": false
+    },
+    "[2025-12-04]惠州仲恺中学20252026学年临聘教师招聘公告": {
+      "id": "[2025-12-04]惠州仲恺中学20252026学年临聘教师招聘公告",
+      "source": "raw-articles/[2025-12-04]惠州仲恺中学20252026学年临聘教师招聘公告.md",
+      "source_date": "2025-12-04",
+      "status": "pending",
+      "processed_at": null,
+      "output": null,
+      "title": null,
+      "error": null,
+      "attempts": 0,
+      "images_migrated": false
+    },
+    "[2025-12-02]惠州仲恺中学校服评定结果及购销模式公示": {
+      "id": "[2025-12-02]惠州仲恺中学校服评定结果及购销模式公示",
+      "source": "raw-articles/[2025-12-02]惠州仲恺中学校服评定结果及购销模式公示.md",
+      "source_date": "2025-12-02",
+      "status": "pending",
+      "processed_at": null,
+      "output": null,
+      "title": null,
+      "error": null,
+      "attempts": 0,
+      "images_migrated": false
+    },
+    "[2025-12-01]聚焦新课改共研新课题惠州仲恺中学2025年度省市级课题集中开题": {
+      "id": "[2025-12-01]聚焦新课改共研新课题惠州仲恺中学2025年度省市级课题集中开题",
+      "source": "raw-articles/[2025-12-01]聚焦新课改共研新课题惠州仲恺中学2025年度省市级课题集中开题.md",
+      "source_date": "2025-12-01",
+      "status": "pending",
+      "processed_at": null,
+      "output": null,
+      "title": null,
+      "error": null,
+      "attempts": 0,
       "images_migrated": false
     }
   }
