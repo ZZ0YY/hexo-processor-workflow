@@ -1,6 +1,6 @@
 {
   "total": 23,
-  "processed": 7,
+  "processed": 9,
   "failed": 2,
   "last_processed": "2026-04-05",
   "daily_limit": 50,
@@ -65,6 +65,16 @@
     {
       "date": "2026-04-05T06:03:20.878065",
       "article_id": "[2026-02-08]2026年春季学期教学辅助服务采购项目采购公告",
+      "status": "completed"
+    },
+    {
+      "date": "2026-04-05T08:21:13.013456",
+      "article_id": "[2026-02-06]惠州仲恺中学2026年寒假致学生家长的一封信",
+      "status": "completed"
+    },
+    {
+      "date": "2026-04-05T08:21:19.248583",
+      "article_id": "[2026-01-26]聚焦智慧教育赋能精准教学我校成功举办智慧教育与三精课堂建设专题讲座",
       "status": "completed"
     }
   ],
@@ -169,24 +179,24 @@
       "id": "[2026-02-06]惠州仲恺中学2026年寒假致学生家长的一封信",
       "source": "raw-articles/[2026-02-06]惠州仲恺中学2026年寒假致学生家长的一封信.md",
       "source_date": "2026-02-06",
-      "status": "pending",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-04-05T08:21:13.013436",
+      "output": "processed/2026-02-06-惠州仲恺中学致2026年寒假学生家长的一封信共筑安全成长之路.md",
+      "title": "惠州仲恺中学：致2026年寒假学生家长的一封信，共筑安全成长之路",
       "error": null,
-      "attempts": 0,
+      "attempts": 1,
       "images_migrated": false
     },
     "[2026-01-26]聚焦智慧教育赋能精准教学我校成功举办智慧教育与三精课堂建设专题讲座": {
       "id": "[2026-01-26]聚焦智慧教育赋能精准教学我校成功举办智慧教育与三精课堂建设专题讲座",
       "source": "raw-articles/[2026-01-26]聚焦智慧教育赋能精准教学我校成功举办智慧教育与三精课堂建设专题讲座.md",
       "source_date": "2026-01-26",
-      "status": "pending",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-04-05T08:21:19.248563",
+      "output": "processed/2026-01-23-智慧赋能精准教学仲恺中学成功举办三精课堂建设专题讲座.md",
+      "title": "智慧赋能精准教学：仲恺中学成功举办“三精课堂”建设专题讲座",
       "error": null,
-      "attempts": 0,
+      "attempts": 1,
       "images_migrated": false
     },
     "[2026-01-26]日新铸锋芒师者竞风流仲恺中学教师篮球队勇夺仲力杯冠军": {
