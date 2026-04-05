@@ -1,6 +1,13 @@
 # Hexo 文章自动处理工作流
 # 每天 UTC 00:00 (北京时间 08:00) 触发，处理 1-2 篇文章
 # 处理完成后创建 PR 供人工审核
+#
+# 修正后的流程：
+#   1. 获取待处理文章列表
+#   2. 【新增】图片预分类（视觉AI识别装饰图）
+#   3. AI 文本处理（基于预分类结果，保留所有内容图片）
+#   4. 图片上传到图床（仅上传，无需再分类）
+#   5. 质量检查 → 创建 PR
 
 name: Hexo Article Processor
 
@@ -97,7 +104,22 @@ jobs:
         env:
           FORCE_REPROCESS: ${{ github.event.inputs.force || 'false' }}
 
-      # ==================== 步骤5: AI 处理文章 ====================
+      # ==================== 步骤5: 图片预分类（在AI文本处理前执行）====================
+      # 【新增步骤】使用 GLM 视觉模型识别原始文章中的装饰性图片
+      # 生成 image_classification_results.json 供后续 AI 文本处理使用
+      - name: Pre-classify images with vision AI
+        id: pre_classify
+        if: steps.pending.outputs.has_articles == 'true' && github.event.inputs.skip_image_classification != 'true'
+        run: |
+          python scripts/pre_classify_images.py
+        env:
+          # GLM 视觉模型配置（用于图片分类）
+          GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
+          GLM_MODEL: ${{ vars.GLM_MODEL || 'glm-4.1v-thinking-flash' }}
+
+      # ==================== 步骤6: AI 处理文章（基于预分类结果）====================
+      # 文本 AI 现在会读取 image_classification_results.json，
+      # 在处理前自动移除装饰性图片，并保留所有内容图片
       - name: Process articles with AI
         id: process
         if: steps.pending.outputs.has_articles == 'true'
@@ -113,7 +135,7 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
 
-      # ==================== 步骤6: 图片智能分类+迁移（每篇文章：分类→上传→完成）====================
+      # ==================== 步骤7: 图片迁移上传（仅上传，分类已在步骤5完成）====================
       - name: Classify and migrate images
         id: image_migration
         if: steps.process.outputs.success == 'true' && github.event.inputs.skip_image_migration != 'true'
@@ -126,25 +148,25 @@ jobs:
           IMAGE_DISPLAY_URL: ${{ secrets.IMAGE_DISPLAY_URL }}
           IMAGE_UPLOAD_CHANNEL: ${{ vars.IMAGE_UPLOAD_CHANNEL || 'telegram' }}
           IMAGE_TARGET_FOLDER: ${{ vars.IMAGE_TARGET_FOLDER || 'wx' }}
-          # 视觉分类配置（免费）
+          # 视觉分类配置（图片已在步骤5预分类，此处跳过以节省 API 调用）
           GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
           GLM_MODEL: ${{ vars.GLM_MODEL || 'glm-4.1v-thinking-flash' }}
-          # 跳过分类（手动触发时可设为 true）
-          SKIP_IMAGE_CLASSIFICATION: ${{ github.event.inputs.skip_image_classification || 'false' }}
+          # 【关键】跳过分类：预分类已在步骤5完成，此处仅需上传
+          SKIP_IMAGE_CLASSIFICATION: 'true'
 
-      # ==================== 步骤7: 质量检查 ====================
+      # ==================== 步骤8: 质量检查 ====================
       - name: Quality check
         if: steps.process.outputs.success == 'true'
         run: |
           python scripts/quality_check.py
 
-      # ==================== 步骤8: 记录当前日期（用于 commit message）====================
+      # ==================== 步骤9: 记录当前日期（用于 commit message）====================
       - name: Record current date
         if: steps.process.outputs.success == 'true'
         id: date
         run: echo "today=$(date '+%Y-%m-%d')" >> $GITHUB_OUTPUT
 
-      # ==================== 步骤9: 检出目标 Hexo 仓库（用于创建 PR）====================
+      # ==================== 步骤10: 检出目标 Hexo 仓库（用于创建 PR）====================
       - name: Checkout target Hexo repository
         if: steps.process.outputs.success == 'true'
         uses: actions/checkout@v4
@@ -154,7 +176,7 @@ jobs:
           path: hexo-target
           fetch-depth: 0
 
-      # ==================== 步骤10: 复制处理后的文章到目标仓库 ====================
+      # ==================== 步骤11: 复制处理后的文章到目标仓库 ====================
       - name: Copy processed articles to target repo
         if: steps.process.outputs.success == 'true'
         run: |
@@ -166,7 +188,7 @@ jobs:
           cp -v processed/*.md "$TARGET_DIR/"
           echo "✅ 已复制 $(ls processed/*.md 2>/dev/null | wc -l) 篇文章到 $TARGET_DIR"
 
-      # ==================== 步骤11: 创建 Pull Request（在目标仓库中）====================
+      # ==================== 步骤12: 创建 Pull Request（在目标仓库中）====================
       - name: Create Pull Request to Hexo repository
         id: create_pr
         if: steps.process.outputs.success == 'true'
@@ -188,6 +210,7 @@ jobs:
             **处理数量**: ${{ steps.process.outputs.success_count }} 篇
             **AI 提供商**: ${{ github.event.inputs.ai_provider || 'gemini' }}
             **模型**: ${{ env.GEMINI_MODEL }}
+            **图片预分类**: ${{ steps.pre_classify.outputs.classify_success == 'true' && '✅ 已完成' || '⏭️ 已跳过' }}
             **图片处理**: ${{ steps.image_migration.outputs.success == 'true' && '✅ 已完成' || '⏭️ 已跳过' }}
             
             ---
@@ -198,7 +221,13 @@ jobs:
             
             ---
             
-            ### 📊 图片处理统计
+            ### 🖼️ 图片预分类统计
+            
+            ${{ steps.pre_classify.outputs.classify_stats }}
+            
+            ---
+            
+            ### 📊 图片上传统计
             
             ${{ steps.image_migration.outputs.stats }}
             
@@ -210,6 +239,7 @@ jobs:
             - [ ] 标题是否准确、有吸引力
             - [ ] 分类和标签是否合适
             - [ ] 图片链接是否有效（已迁移至图床）
+            - [ ] 内容图片是否被正确保留（装饰图已被预分类移除）
             - [ ] 内容格式是否正确
             - [ ] 是否有遗漏或错误
             
@@ -223,6 +253,7 @@ jobs:
             - 处理数量: ${{ steps.process.outputs.success_count }} 篇
             - 处理日期: ${{ steps.date.outputs.today }}
             - AI 提供商: ${{ github.event.inputs.ai_provider || env.DEFAULT_AI_PROVIDER }}
+            - 图片预分类: ${{ steps.pre_classify.outputs.classify_success == 'true' && '已完成' || '已跳过' }}
             - 图片迁移: ${{ steps.image_migration.outputs.success == 'true' && '已完成' || '已跳过' }}
           # 标签
           labels: |
@@ -233,7 +264,7 @@ jobs:
           # 草稿 PR
           draft: false
 
-      # ==================== 步骤12: 提交状态更新到处理仓库 ====================
+      # ==================== 步骤13: 提交状态更新到处理仓库 ====================
       - name: Commit status update
         if: always() && steps.process.outputs.success == 'true'
         run: |
@@ -249,7 +280,7 @@ jobs:
             git push
           fi
 
-      # ==================== 步骤13: 输出 PR 信息 ====================
+      # ==================== 步骤14: 输出 PR 信息 ====================
       - name: Output PR info
         if: steps.create_pr.outputs.pull-request-number
         run: |
@@ -261,13 +292,13 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "请前往 Hexo 仓库审核并合并此 PR。" >> $GITHUB_STEP_SUMMARY
 
-      # ==================== 步骤14: 生成处理报告 ====================
+      # ==================== 步骤15: 生成处理报告 ====================
       - name: Generate report
         if: always()
         run: |
           python scripts/generate_report.py >> $GITHUB_STEP_SUMMARY
 
-      # ==================== 步骤15: 失败通知 ====================
+      # ==================== 步骤16: 失败通知 ====================
       - name: Notify on failure
         if: failure()
         run: |

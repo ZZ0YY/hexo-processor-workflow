@@ -300,7 +300,7 @@ def remove_images_from_content(content: str, drop_urls: set) -> str:
         md_images = re.findall(r'!\[[^\]]*\]\((http[^)]+)\)', line)
 
         has_drop = False
-        for _, img_url in md_images:
+        for img_url in md_images:
             if img_url.strip() in drop_urls:
                 has_drop = True
                 break
@@ -317,7 +317,7 @@ def remove_images_from_content(content: str, drop_urls: set) -> str:
             continue
         else:
             # 图片嵌入文字中 → 只移除 DROP 的图片
-            for _, img_url in md_images:
+            for img_url in md_images:
                 if img_url.strip() in drop_urls:
                     line = re.sub(
                         r'!\[[^\]]*\]\(' + re.escape(img_url.strip()) + r'\)',

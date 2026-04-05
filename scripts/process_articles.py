@@ -263,17 +263,35 @@ class RobustArticleProcessor:
             return self.prompt_template.split('---')[0].strip()
         return "你是一个专业的内容编辑。"
 
-    def _get_user_prompt(self, content: str) -> str:
+    def _get_user_prompt(self, content: str, has_pre_classification: bool = False) -> str:
         """构建用户提示词
 
         将模板中系统提示词（第一个 --- 之前）之后的所有内容作为用户提示词，
         并将 {content} 占位符替换为实际文章内容。
+
+        Args:
+            content: 文章内容
+            has_pre_classification: 是否已完成图片预分类
+                若为 True，会在提示词中注入提示，告知 AI 装饰图已被移除
         """
         if '{content}' in self.prompt_template:
             first_separator_idx = self.prompt_template.index('---')
             user_template = self.prompt_template[first_separator_idx + 3:].strip()
-            return user_template.replace('{content}', content)
-        return self.prompt_template.replace('{content}', content)
+            result = user_template.replace('{content}', content)
+        else:
+            result = self.prompt_template.replace('{content}', content)
+
+        # 图片预分类完成后，注入提示告知 AI 装饰图已被移除
+        if has_pre_classification:
+            classification_note = (
+                "\n> **⚠️ 重要提示**：本文中的装饰性图片（分割线、二维码、"
+                "纯装饰元素等）已通过视觉AI预分类自动移除。"
+                "**请保留文中所有剩余图片**，不要删除任何图片，"
+                "只需为每张图片添加描述性 alt 文本即可。\n\n"
+            )
+            result = classification_note + result
+
+        return result
 
     def read_article(self, file_path: str) -> str:
         """读取原始文章"""
@@ -381,13 +399,17 @@ class RobustArticleProcessor:
 
         raise RuntimeError(f"{provider_name} 所有 Key 均已耗尽重试次数")
 
-    def process_with_ai(self, content: str) -> str:
+    def process_with_ai(self, content: str, has_pre_classification: bool = False) -> str:
         """使用 AI 处理文章（自动重试 + 降级）
 
         依次尝试提供商链中的每个提供商，
         每个提供商内部进行多 Key 轮换重试。
+
+        Args:
+            content: 文章内容
+            has_pre_classification: 是否已完成图片预分类
         """
-        user_prompt = self._get_user_prompt(content)
+        user_prompt = self._get_user_prompt(content, has_pre_classification)
         errors = []
 
         for i, provider in enumerate(self.providers):
@@ -416,8 +438,16 @@ class RobustArticleProcessor:
         raise RuntimeError(f"所有 AI 提供商均失败 - {error_detail}")
 
     def process_article(self, article: Dict[str, Any],
-                       output_dir: str = "processed") -> Dict[str, Any]:
-        """处理单篇文章"""
+                       output_dir: str = "processed",
+                       classification_results: Dict = None) -> Dict[str, Any]:
+        """处理单篇文章
+
+        Args:
+            article: 文章信息字典
+            output_dir: 输出目录
+            classification_results: 图片预分类结果
+                {article_id: {drop_urls: [...], keep_urls: [...]}}
+        """
         result = {
             "article_id": article["id"],
             "success": False,
@@ -432,8 +462,25 @@ class RobustArticleProcessor:
 
             print(f"  📖 正在处理: {original_title}")
 
+            # ---- 图片预分类处理 ----
+            # 在发送给文本 AI 前，移除已被视觉模型识别为装饰性的图片
+            has_pre_classification = False
+            if classification_results and article["id"] in classification_results:
+                article_clf = classification_results[article["id"]]
+                drop_urls = set(article_clf.get("drop_urls", []))
+                if drop_urls:
+                    from image_classifier import remove_images_from_content
+                    raw_content = remove_images_from_content(raw_content, drop_urls)
+                    kept = article_clf.get("keep_urls", [])
+                    print(f"  🖼️ 预分类: 已移除 {len(drop_urls)} 张装饰图，"
+                          f"保留 {len(kept)} 张内容图")
+                    has_pre_classification = True
+                else:
+                    print(f"  🖼️ 预分类: 无需移除装饰图")
+                    has_pre_classification = True
+
             # AI 处理（自动重试 + 降级）
-            processed_content = self.process_with_ai(raw_content)
+            processed_content = self.process_with_ai(raw_content, has_pre_classification)
 
             # 清理 AI 输出
             processed_content = self._clean_ai_output(processed_content)
@@ -487,6 +534,21 @@ def main():
 
     print(f"\n🤖 开始 AI 处理，共 {len(pending_articles)} 篇文章\n")
 
+    # 加载图片预分类结果（由 pre_classify_images.py 生成）
+    classification_results = {}
+    clf_path = Path("image_classification_results.json")
+    if clf_path.exists():
+        try:
+            with open(clf_path, 'r', encoding='utf-8') as f:
+                classification_results = json.load(f)
+            if classification_results:
+                total_clf = len(classification_results)
+                print(f"🖼️ 已加载图片预分类结果（{total_clf} 篇文章）")
+        except Exception as e:
+            print(f"⚠️ 图片预分类结果加载失败: {e}，将跳过预分类")
+    else:
+        print("ℹ️ 未找到图片预分类结果，文本AI将自行处理图片")
+
     # 初始化处理器（自动构建主+备用提供商链）
     try:
         processor = RobustArticleProcessor(primary_provider=ai_provider)
@@ -504,8 +566,9 @@ def main():
         # 标记为处理中
         manager.mark_processing(article["id"])
 
-        # 处理文章
-        result = processor.process_article(article)
+        # 处理文章（传入图片预分类结果）
+        result = processor.process_article(
+            article, classification_results=classification_results)
         results.append(result)
 
         # 更新状态

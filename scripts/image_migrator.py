@@ -168,7 +168,7 @@ class WebPMigrator:
         url_set = set()
 
         # Markdown 正文: ![alt](url)
-        for _, url in re.findall(r'!\[[^\]]*\]\((http[^)]+)\)', content):
+        for url in re.findall(r'!\[[^\]]*\]\((http[^)]+)\)', content):
             url_set.add(url.strip())
 
         # Front Matter cover
