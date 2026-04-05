@@ -35,6 +35,11 @@ on:
         required: false
         default: 'false'
         type: boolean
+      skip_image_classification:
+        description: '跳过图片智能分类（视觉模型识别装饰图）'
+        required: false
+        default: 'false'
+        type: boolean
 
 env:
   # 每日处理上限（防止意外超支）
@@ -108,18 +113,24 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
 
-      # ==================== 步骤6: 图片迁移（AI处理后运行，节省图床空间）====================
-      - name: Migrate images to image host
+      # ==================== 步骤6: 图片智能分类+迁移（每篇文章：分类→上传→完成）====================
+      - name: Classify and migrate images
         id: image_migration
         if: steps.process.outputs.success == 'true' && github.event.inputs.skip_image_migration != 'true'
         run: |
           python scripts/image_migrator.py
         env:
+          # 图床配置
           IMAGE_API_TOKEN: ${{ secrets.IMAGE_API_TOKEN }}
           IMAGE_HOST_URL: ${{ secrets.IMAGE_HOST_URL }}
           IMAGE_DISPLAY_URL: ${{ secrets.IMAGE_DISPLAY_URL }}
           IMAGE_UPLOAD_CHANNEL: ${{ vars.IMAGE_UPLOAD_CHANNEL || 'telegram' }}
           IMAGE_TARGET_FOLDER: ${{ vars.IMAGE_TARGET_FOLDER || 'wx' }}
+          # 视觉分类配置（免费）
+          GLM_API_KEY: ${{ secrets.GLM_API_KEY }}
+          GLM_MODEL: ${{ vars.GLM_MODEL || 'glm-4.1v-thinking-flash' }}
+          # 跳过分类（手动触发时可设为 true）
+          SKIP_IMAGE_CLASSIFICATION: ${{ github.event.inputs.skip_image_classification || 'false' }}
 
       # ==================== 步骤7: 质量检查 ====================
       - name: Quality check
@@ -177,7 +188,7 @@ jobs:
             **处理数量**: ${{ steps.process.outputs.success_count }} 篇
             **AI 提供商**: ${{ github.event.inputs.ai_provider || 'gemini' }}
             **模型**: ${{ env.GEMINI_MODEL }}
-            **图片迁移**: ${{ steps.image_migration.outputs.success == 'true' && '✅ 已完成' || '⏭️ 已跳过' }}
+            **图片处理**: ${{ steps.image_migration.outputs.success == 'true' && '✅ 已完成' || '⏭️ 已跳过' }}
             
             ---
             
@@ -187,7 +198,7 @@ jobs:
             
             ---
             
-            ### 📊 图片迁移统计
+            ### 📊 图片处理统计
             
             ${{ steps.image_migration.outputs.stats }}
             
