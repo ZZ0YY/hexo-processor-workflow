@@ -1,6 +1,6 @@
 {
   "total": 23,
-  "processed": 9,
+  "processed": 14,
   "failed": 2,
   "last_processed": "2026-04-05",
   "daily_limit": 50,
@@ -75,6 +75,31 @@
     {
       "date": "2026-04-05T08:21:19.248583",
       "article_id": "[2026-01-26]聚焦智慧教育赋能精准教学我校成功举办智慧教育与三精课堂建设专题讲座",
+      "status": "completed"
+    },
+    {
+      "date": "2026-04-05T08:39:59.813493",
+      "article_id": "[2026-01-26]日新铸锋芒师者竞风流仲恺中学教师篮球队勇夺仲力杯冠军",
+      "status": "completed"
+    },
+    {
+      "date": "2026-04-05T08:40:10.125095",
+      "article_id": "[2026-01-22]同心共育科学导航高一年级成功举办选科指导主题家长会",
+      "status": "completed"
+    },
+    {
+      "date": "2026-04-05T08:40:31.350297",
+      "article_id": "[2026-01-06]惠州仲恺中学第二十三届艺术节美术优秀作品展",
+      "status": "completed"
+    },
+    {
+      "date": "2026-04-05T08:40:37.380723",
+      "article_id": "[2026-01-04]以赛促研砥砺前行省奖得主陈文君老师的工业烟气脱硫项目式学习备赛之路",
+      "status": "completed"
+    },
+    {
+      "date": "2026-04-05T08:40:46.262846",
+      "article_id": "[2025-12-31]让力看得见AI助力牛顿第二定律理解我校联合仲恺高级中学仲恺区郭海滨名教师工作",
       "status": "completed"
     }
   ],
@@ -203,60 +228,60 @@
       "id": "[2026-01-26]日新铸锋芒师者竞风流仲恺中学教师篮球队勇夺仲力杯冠军",
       "source": "raw-articles/[2026-01-26]日新铸锋芒师者竞风流仲恺中学教师篮球队勇夺仲力杯冠军.md",
       "source_date": "2026-01-26",
-      "status": "pending",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-04-05T08:39:59.813473",
+      "output": "processed/2026-01-26-仲恺中学教师篮球队仲力杯夺冠展现师者风采与体育精神.md",
+      "title": "仲恺中学教师篮球队“仲力杯”夺冠，展现师者风采与体育精神",
       "error": null,
-      "attempts": 0,
+      "attempts": 1,
       "images_migrated": false
     },
     "[2026-01-22]同心共育科学导航高一年级成功举办选科指导主题家长会": {
       "id": "[2026-01-22]同心共育科学导航高一年级成功举办选科指导主题家长会",
       "source": "raw-articles/[2026-01-22]同心共育科学导航高一年级成功举办选科指导主题家长会.md",
       "source_date": "2026-01-22",
-      "status": "pending",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-04-05T08:40:10.125075",
+      "output": "processed/2026-01-18-惠州仲恺中学高一年级成功举办选科指导家长会科学规划未来.md",
+      "title": "惠州仲恺中学高一年级成功举办选科指导家长会，科学规划未来",
       "error": null,
-      "attempts": 0,
+      "attempts": 1,
       "images_migrated": false
     },
     "[2026-01-06]惠州仲恺中学第二十三届艺术节美术优秀作品展": {
       "id": "[2026-01-06]惠州仲恺中学第二十三届艺术节美术优秀作品展",
       "source": "raw-articles/[2026-01-06]惠州仲恺中学第二十三届艺术节美术优秀作品展.md",
       "source_date": "2026-01-06",
-      "status": "pending",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-04-05T08:40:31.350279",
+      "output": "processed/2026-01-06-惠州仲恺中学第二十三届艺术节美术优秀作品展少年笔绘风华创意点亮青春.md",
+      "title": "惠州仲恺中学第二十三届艺术节美术优秀作品展：少年笔绘风华，创意点亮青春",
       "error": null,
-      "attempts": 0,
+      "attempts": 1,
       "images_migrated": false
     },
     "[2026-01-04]以赛促研砥砺前行省奖得主陈文君老师的工业烟气脱硫项目式学习备赛之路": {
       "id": "[2026-01-04]以赛促研砥砺前行省奖得主陈文君老师的工业烟气脱硫项目式学习备赛之路",
       "source": "raw-articles/[2026-01-04]以赛促研砥砺前行省奖得主陈文君老师的工业烟气脱硫项目式学习备赛之路.md",
       "source_date": "2026-01-04",
-      "status": "pending",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-04-05T08:40:37.380704",
+      "output": "processed/2026-01-04-广东省高中化学组一等奖陈文君老师实验教学创新获佳绩.md",
+      "title": "广东省高中化学组一等奖！陈文君老师实验教学创新获佳绩",
       "error": null,
-      "attempts": 0,
+      "attempts": 1,
       "images_migrated": false
     },
     "[2025-12-31]让力看得见AI助力牛顿第二定律理解我校联合仲恺高级中学仲恺区郭海滨名教师工作": {
       "id": "[2025-12-31]让力看得见AI助力牛顿第二定律理解我校联合仲恺高级中学仲恺区郭海滨名教师工作",
       "source": "raw-articles/[2025-12-31]让力看得见AI助力牛顿第二定律理解我校联合仲恺高级中学仲恺区郭海滨名教师工作.md",
       "source_date": "2025-12-31",
-      "status": "pending",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-04-05T08:40:46.262827",
+      "output": "processed/2025-12-25-AI赋能物理课堂仲恺中学联合举办牛顿第二定律AI教学专题活动.md",
+      "title": "AI赋能物理课堂：仲恺中学联合举办“牛顿第二定律”AI教学专题活动",
       "error": null,
-      "attempts": 0,
+      "attempts": 1,
       "images_migrated": false
     },
     "[2025-12-30]惠州仲恺中学元旦假期致学生家长的一封信": {
