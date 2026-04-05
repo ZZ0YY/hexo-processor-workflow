@@ -1,6 +1,6 @@
 {
   "total": 23,
-  "processed": 6,
+  "processed": 7,
   "failed": 2,
   "last_processed": "2026-04-05",
   "daily_limit": 50,
@@ -60,6 +60,11 @@
     {
       "date": "2026-04-05T05:21:23.314098",
       "article_id": "[2026-02-11]笔墨迎春福满仲中惠州仲恺中学2026年新春送福活动",
+      "status": "completed"
+    },
+    {
+      "date": "2026-04-05T06:03:20.878065",
+      "article_id": "[2026-02-08]2026年春季学期教学辅助服务采购项目采购公告",
       "status": "completed"
     }
   ],
@@ -152,12 +157,12 @@
       "id": "[2026-02-08]2026年春季学期教学辅助服务采购项目采购公告",
       "source": "raw-articles/[2026-02-08]2026年春季学期教学辅助服务采购项目采购公告.md",
       "source_date": "2026-02-08",
-      "status": "pending",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-04-05T06:03:20.878046",
+      "output": "processed/2026-02-08-惠州仲恺中学发布2026年春季学期教学辅助服务采购公告.md",
+      "title": "惠州仲恺中学发布2026年春季学期教学辅助服务采购公告",
       "error": null,
-      "attempts": 0,
+      "attempts": 1,
       "images_migrated": false
     },
     "[2026-02-06]惠州仲恺中学2026年寒假致学生家长的一封信": {
