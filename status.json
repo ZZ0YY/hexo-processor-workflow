@@ -1,8 +1,8 @@
 {
   "total": 678,
-  "processed": 524,
+  "processed": 526,
   "failed": 152,
-  "last_processed": "2026-07-16",
+  "last_processed": "2026-07-17",
   "daily_limit": 20,
   "history": [
     {
@@ -4091,6 +4091,16 @@
       "article_id": "[2019-11-20]仲恺中学团委开展新时代共青团主题团课活动",
       "status": "failed",
       "error": "所有 AI 提供商均失败 - OPENAI: OpenAI API 调用失败: Error code: 400 - {'error': {'code': '1211', 'message': '模型不存在，请检查模型代码。'}}; GEMINI: Gemini API 调用失败: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\\nPlease retry in 18.350216396s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash-lite'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '18s'}]}}"
+    },
+    {
+      "date": "2026-07-17T01:56:34.357940",
+      "article_id": "[2019-11-20]仲恺中学团委学生会举行2019届学生会毕业生退会仪式",
+      "status": "completed"
+    },
+    {
+      "date": "2026-07-17T01:56:43.290760",
+      "article_id": "[2019-11-19]以奉献扬青春与社会同进步仲恺中学志愿服务队不懈弘扬志愿精神",
+      "status": "completed"
     }
   ],
   "articles": {
@@ -12210,24 +12220,24 @@
       "id": "[2019-11-20]仲恺中学团委学生会举行2019届学生会毕业生退会仪式",
       "source": "raw-articles/[2019-11-20]仲恺中学团委学生会举行2019届学生会毕业生退会仪式.md",
       "source_date": "2019-11-20",
-      "status": "pending",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-07-17T01:56:34.357883",
+      "output": "processed/2019-11-13-仲恺中学团委学生会举行2019届毕业生退会仪式传承与发展并进.md",
+      "title": "仲恺中学团委学生会举行2019届毕业生退会仪式，传承与发展并进",
       "error": null,
-      "attempts": 0,
+      "attempts": 1,
       "images_migrated": false
     },
     "[2019-11-19]以奉献扬青春与社会同进步仲恺中学志愿服务队不懈弘扬志愿精神": {
       "id": "[2019-11-19]以奉献扬青春与社会同进步仲恺中学志愿服务队不懈弘扬志愿精神",
       "source": "raw-articles/[2019-11-19]以奉献扬青春与社会同进步仲恺中学志愿服务队不懈弘扬志愿精神.md",
       "source_date": "2019-11-19",
-      "status": "pending",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-07-17T01:56:43.290702",
+      "output": "processed/2019-11-19-仲恺中学青年志愿者服务队以奉献扬青春与社会同进步.md",
+      "title": "仲恺中学青年志愿者服务队：以奉献扬青春，与社会同进步",
       "error": null,
-      "attempts": 0,
+      "attempts": 1,
       "images_migrated": false
     }
   }
