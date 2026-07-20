@@ -1,8 +1,8 @@
 {
   "total": 678,
-  "processed": 564,
+  "processed": 584,
   "failed": 115,
-  "last_processed": "2026-07-19",
+  "last_processed": "2026-07-20",
   "daily_limit": 20,
   "history": [
     {
@@ -4303,6 +4303,106 @@
       "date": "2026-07-19T02:08:06.493715",
       "article_id": "[2022-08-01]秉承日新滴水穿石战高考如歌岁月须无悔耕读天下乘风破浪展雄才折桂蟾宫当有时仲恺",
       "status": "completed"
+    },
+    {
+      "date": "2026-07-20T03:36:04.284066",
+      "article_id": "[2022-08-01]勇于担当追求卓越惠州仲恺中学2023届高三年级第一次教师工作会议",
+      "status": "completed"
+    },
+    {
+      "date": "2026-07-20T03:36:17.393912",
+      "article_id": "[2022-07-14]惠州仲恺中学2022级新生报到注册须知",
+      "status": "completed"
+    },
+    {
+      "date": "2026-07-20T03:36:28.671554",
+      "article_id": "[2022-05-17]惠州仲恺中学第五届心理健康文化节励志电影赏析征文大赛",
+      "status": "completed"
+    },
+    {
+      "date": "2026-07-20T03:36:47.716777",
+      "article_id": "[2022-04-16]赓续初心共育人踔厉奋发向未来惠州仲恺中学第一届家委会成立大会",
+      "status": "completed"
+    },
+    {
+      "date": "2026-07-20T03:36:56.287677",
+      "article_id": "[2022-04-16]扎实教学砥砺奋进仲恺中学生物公开课活动",
+      "status": "completed"
+    },
+    {
+      "date": "2026-07-20T03:37:08.198844",
+      "article_id": "[2022-03-28]播种绿色收获希望团委顺利开展植树节活动",
+      "status": "completed"
+    },
+    {
+      "date": "2026-07-20T03:37:19.884448",
+      "article_id": "[2022-03-26]润物无声潜心教研仲恺中学高中政治公开课",
+      "status": "completed"
+    },
+    {
+      "date": "2026-07-20T03:37:28.680113",
+      "article_id": "[2022-03-19]筑平安校园保师生安全仲恺中学高中部开展校园及周边综合治理行动",
+      "status": "completed"
+    },
+    {
+      "date": "2026-07-20T03:37:39.004605",
+      "article_id": "[2022-03-19]阳春三月天气暖师生共撰新诗篇n仲恺中学英语科组常规教研活动",
+      "status": "completed"
+    },
+    {
+      "date": "2026-07-20T03:37:48.245824",
+      "article_id": "[2022-03-19]扎实教研砥砺奋进惠州仲恺中学政治科组公开课教研活动",
+      "status": "completed"
+    },
+    {
+      "date": "2026-07-20T03:37:56.692151",
+      "article_id": "[2022-03-15]朋辈力量护心远航惠州仲恺中学2022年春季心理委员培训",
+      "status": "completed"
+    },
+    {
+      "date": "2026-07-20T03:38:07.194811",
+      "article_id": "[2022-03-15]靖宁致远泼翰墨慧聪抒雅悦美音惠州一中徐靖慧老师给惠州仲恺中学2022届高三语",
+      "status": "completed"
+    },
+    {
+      "date": "2026-07-20T03:38:28.708975",
+      "article_id": "[2022-03-14]课堂调研提效率课后总结促备考惠州仲恺中学2022届高三艺体班调研课总结会",
+      "status": "completed"
+    },
+    {
+      "date": "2026-07-20T03:38:36.468996",
+      "article_id": "[2022-03-07]化学科组开展公开课教学活动一次受益良多的公开教学",
+      "status": "completed"
+    },
+    {
+      "date": "2026-07-20T03:38:42.555980",
+      "article_id": "[2022-03-05]仲恺中学2022届高三生物调研课活动",
+      "status": "completed"
+    },
+    {
+      "date": "2026-07-20T03:39:05.879350",
+      "article_id": "[2021-12-29]仲恺中学团委顺利进行2021届学生会优秀部门优秀干部表彰活动",
+      "status": "completed"
+    },
+    {
+      "date": "2026-07-20T03:39:15.219834",
+      "article_id": "[2021-12-17]仲中教研展风采同课异构促成长仲恺区高中化学基于不同情境下的同课异构公开课活动",
+      "status": "completed"
+    },
+    {
+      "date": "2026-07-20T03:39:31.118728",
+      "article_id": "[2021-12-14]以查促教以导辅学惠州仲恺中学教学常规检查评比暨表彰大会简报",
+      "status": "completed"
+    },
+    {
+      "date": "2026-07-20T03:39:45.953571",
+      "article_id": "[2021-12-11]仲恺中学第十九届艺术节才艺大赛顺利落下帷幕",
+      "status": "completed"
+    },
+    {
+      "date": "2026-07-20T03:39:55.301142",
+      "article_id": "[2021-11-15]网络安全始于心安全网络践于行n惠州仲恺中学网络安全教育主题活动总结",
+      "status": "completed"
     }
   ],
   "articles": {
@@ -8066,12 +8166,12 @@
       "id": "[2022-08-01]勇于担当追求卓越惠州仲恺中学2023届高三年级第一次教师工作会议",
       "source": "raw-articles/[2022-08-01]勇于担当追求卓越惠州仲恺中学2023届高三年级第一次教师工作会议.md",
       "source_date": "2022-08-01",
-      "status": "failed",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-07-20T03:36:04.284006",
+      "output": "processed/2022-08-01-惠州仲恺中学召开2023届高三第一次教师工作会议部署新学期备考新篇章.md",
+      "title": "惠州仲恺中学召开2023届高三第一次教师工作会议，部署新学期备考新篇章",
       "error": "所有 AI 提供商均失败 - OPENAI: OpenAI API 调用失败: Error code: 400 - {'error': {'code': '1211', 'message': '模型不存在，请检查模型代码。'}}; GEMINI: Gemini API 调用失败: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\\nPlease retry in 13.715044502s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash-lite', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '13s'}]}}",
-      "attempts": 2,
+      "attempts": 3,
       "images_migrated": false
     },
     "[2022-08-01]秉承日新滴水穿石战高考如歌岁月须无悔耕读天下乘风破浪展雄才折桂蟾宫当有时仲恺": {
@@ -8090,12 +8190,12 @@
       "id": "[2022-07-14]惠州仲恺中学2022级新生报到注册须知",
       "source": "raw-articles/[2022-07-14]惠州仲恺中学2022级新生报到注册须知.md",
       "source_date": "2022-07-14",
-      "status": "failed",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-07-20T03:36:17.393851",
+      "output": "processed/2022-07-14-惠州仲恺中学2022级高一新生报到注册须知.md",
+      "title": "惠州仲恺中学2022级高一新生报到注册须知",
       "error": "所有 AI 提供商均失败 - OPENAI: OpenAI API 调用失败: Error code: 400 - {'error': {'code': '1211', 'message': '模型不存在，请检查模型代码。'}}; GEMINI: Gemini API 调用失败: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\\nPlease retry in 18.416345518s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash-lite'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '18s'}]}}",
-      "attempts": 1,
+      "attempts": 2,
       "images_migrated": false
     },
     "[2022-07-09]惠州仲恺中学致学生和家长暑期安全的一封信": {
@@ -8330,12 +8430,12 @@
       "id": "[2022-05-17]惠州仲恺中学第五届心理健康文化节励志电影赏析征文大赛",
       "source": "raw-articles/[2022-05-17]惠州仲恺中学第五届心理健康文化节励志电影赏析征文大赛.md",
       "source_date": "2022-05-17",
-      "status": "failed",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-07-20T03:36:28.671495",
+      "output": "processed/2022-05-17-仲恺中学第五届心理健康文化节励志电影风雨哈佛路赏析征文大赛圆满落幕.md",
+      "title": "仲恺中学第五届心理健康文化节：励志电影《风雨哈佛路》赏析征文大赛圆满落幕",
       "error": "所有 AI 提供商均失败 - OPENAI: OpenAI API 调用失败: Error code: 400 - {'error': {'code': '1211', 'message': '模型不存在，请检查模型代码。'}}; GEMINI: Gemini API 调用失败: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\\nPlease retry in 18.99080517s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash-lite', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '18s'}]}}",
-      "attempts": 1,
+      "attempts": 2,
       "images_migrated": false
     },
     "[2022-05-13]惠州仲恺中学2022年秋季高一新生招生问答": {
@@ -8546,12 +8646,12 @@
       "id": "[2022-04-16]赓续初心共育人踔厉奋发向未来惠州仲恺中学第一届家委会成立大会",
       "source": "raw-articles/[2022-04-16]赓续初心共育人踔厉奋发向未来惠州仲恺中学第一届家委会成立大会.md",
       "source_date": "2022-04-16",
-      "status": "failed",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-07-20T03:36:47.716695",
+      "output": "processed/2022-04-13-惠州仲恺中学首届家委会成立共绘家校共育新蓝图.md",
+      "title": "惠州仲恺中学首届家委会成立，共绘家校共育新蓝图",
       "error": "所有 AI 提供商均失败 - OPENAI: OpenAI API 调用失败: Error code: 400 - {'error': {'code': '1211', 'message': '模型不存在，请检查模型代码。'}}; GEMINI: Gemini API 调用失败: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-      "attempts": 1,
+      "attempts": 2,
       "images_migrated": false
     },
     "[2022-04-16]分享交流携手共进校际教学工作交流会": {
@@ -8570,12 +8670,12 @@
       "id": "[2022-04-16]扎实教学砥砺奋进仲恺中学生物公开课活动",
       "source": "raw-articles/[2022-04-16]扎实教学砥砺奋进仲恺中学生物公开课活动.md",
       "source_date": "2022-04-16",
-      "status": "failed",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-07-20T03:36:56.287625",
+      "output": "processed/2022-04-14-扎实教学砥砺奋进仲恺中学生物公开课提升课堂教学质量.md",
+      "title": "\"扎实教学砥砺奋进：仲恺中学生物公开课提升课堂教学质量\"",
       "error": "所有 AI 提供商均失败 - OPENAI: OpenAI API 调用失败: Error code: 400 - {'error': {'code': '1211', 'message': '模型不存在，请检查模型代码。'}}; GEMINI: Gemini API 调用失败: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\\nPlease retry in 5.586278584s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash-lite'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '5s'}]}}",
-      "attempts": 1,
+      "attempts": 2,
       "images_migrated": false
     },
     "[2022-04-14]厉兵秣马备战省运区宣教文卫办党组成员副主任龙得泉来我校调研": {
@@ -8702,120 +8802,120 @@
       "id": "[2022-03-28]播种绿色收获希望团委顺利开展植树节活动",
       "source": "raw-articles/[2022-03-28]播种绿色收获希望团委顺利开展植树节活动.md",
       "source_date": "2022-03-28",
-      "status": "failed",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-07-20T03:37:08.198787",
+      "output": "processed/2022-03-28-仲恺中学团委成功举办播种绿色收获希望植树节主题活动.md",
+      "title": "仲恺中学团委成功举办“播种绿色，收获希望”植树节主题活动",
       "error": "所有 AI 提供商均失败 - OPENAI: OpenAI API 调用失败: Error code: 400 - {'error': {'code': '1211', 'message': '模型不存在，请检查模型代码。'}}; GEMINI: Gemini API 调用失败: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\\nPlease retry in 34.225927743s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash-lite', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '34s'}]}}",
-      "attempts": 1,
+      "attempts": 2,
       "images_migrated": false
     },
     "[2022-03-26]润物无声潜心教研仲恺中学高中政治公开课": {
       "id": "[2022-03-26]润物无声潜心教研仲恺中学高中政治公开课",
       "source": "raw-articles/[2022-03-26]润物无声潜心教研仲恺中学高中政治公开课.md",
       "source_date": "2022-03-26",
-      "status": "failed",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-07-20T03:37:19.884393",
+      "output": "processed/2022-03-25-仲恺中学政治科组公开课聚焦教学创新提升教研实效.md",
+      "title": "仲恺中学政治科组公开课：聚焦教学创新，提升教研实效",
       "error": "所有 AI 提供商均失败 - OPENAI: OpenAI API 调用失败: Error code: 400 - {'error': {'code': '1211', 'message': '模型不存在，请检查模型代码。'}}; GEMINI: Gemini API 调用失败: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\\nPlease retry in 17.88209673s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash-lite', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '17s'}]}}",
-      "attempts": 1,
+      "attempts": 2,
       "images_migrated": false
     },
     "[2022-03-19]筑平安校园保师生安全仲恺中学高中部开展校园及周边综合治理行动": {
       "id": "[2022-03-19]筑平安校园保师生安全仲恺中学高中部开展校园及周边综合治理行动",
       "source": "raw-articles/[2022-03-19]筑平安校园保师生安全仲恺中学高中部开展校园及周边综合治理行动.md",
       "source_date": "2022-03-19",
-      "status": "failed",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-07-20T03:37:28.680059",
+      "output": "processed/2022-03-18-惠州仲恺中学多部门联动筑牢校园安全防火墙.md",
+      "title": "惠州仲恺中学：多部门联动，筑牢校园安全“防火墙”",
       "error": "所有 AI 提供商均失败 - OPENAI: OpenAI API 调用失败: Error code: 400 - {'error': {'code': '1211', 'message': '模型不存在，请检查模型代码。'}}; GEMINI: Gemini API 调用失败: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\\nPlease retry in 1.242215312s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash-lite', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '1s'}]}}",
-      "attempts": 1,
+      "attempts": 2,
       "images_migrated": false
     },
     "[2022-03-19]阳春三月天气暖师生共撰新诗篇n仲恺中学英语科组常规教研活动": {
       "id": "[2022-03-19]阳春三月天气暖师生共撰新诗篇n仲恺中学英语科组常规教研活动",
       "source": "raw-articles/[2022-03-19]阳春三月天气暖师生共撰新诗篇n仲恺中学英语科组常规教研活动.md",
       "source_date": "2022-03-19",
-      "status": "failed",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-07-20T03:37:39.004550",
+      "output": "processed/2022-03-18-仲恺中学英语科组教研活动名师课堂绽放思维火花.md",
+      "title": "仲恺中学英语科组教研活动：名师课堂绽放思维火花",
       "error": "所有 AI 提供商均失败 - OPENAI: OpenAI API 调用失败: Error code: 400 - {'error': {'code': '1211', 'message': '模型不存在，请检查模型代码。'}}; GEMINI: Gemini API 调用失败: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\\nPlease retry in 44.929013442s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash-lite'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '44s'}]}}",
-      "attempts": 1,
+      "attempts": 2,
       "images_migrated": false
     },
     "[2022-03-19]扎实教研砥砺奋进惠州仲恺中学政治科组公开课教研活动": {
       "id": "[2022-03-19]扎实教研砥砺奋进惠州仲恺中学政治科组公开课教研活动",
       "source": "raw-articles/[2022-03-19]扎实教研砥砺奋进惠州仲恺中学政治科组公开课教研活动.md",
       "source_date": "2022-03-19",
-      "status": "failed",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-07-20T03:37:48.245767",
+      "output": "processed/2022-03-18-惠州仲恺中学政治科组扎实教研公开课启迪智慧促成长.md",
+      "title": "惠州仲恺中学政治科组：扎实教研公开课，启迪智慧促成长",
       "error": "所有 AI 提供商均失败 - OPENAI: OpenAI API 调用失败: Error code: 400 - {'error': {'code': '1211', 'message': '模型不存在，请检查模型代码。'}}; GEMINI: Gemini API 调用失败: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\\nPlease retry in 28.617937885s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash-lite'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '28s'}]}}",
-      "attempts": 1,
+      "attempts": 2,
       "images_migrated": false
     },
     "[2022-03-15]朋辈力量护心远航惠州仲恺中学2022年春季心理委员培训": {
       "id": "[2022-03-15]朋辈力量护心远航惠州仲恺中学2022年春季心理委员培训",
       "source": "raw-articles/[2022-03-15]朋辈力量护心远航惠州仲恺中学2022年春季心理委员培训.md",
       "source_date": "2022-03-15",
-      "status": "failed",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-07-20T03:37:56.692097",
+      "output": "processed/2022-03-15-朋辈力量护心远航惠州仲恺中学心理委员培训圆满举行.md",
+      "title": "朋辈力量，护心远航——惠州仲恺中学心理委员培训圆满举行",
       "error": "所有 AI 提供商均失败 - OPENAI: OpenAI API 调用失败: Error code: 400 - {'error': {'code': '1211', 'message': '模型不存在，请检查模型代码。'}}; GEMINI: Gemini API 调用失败: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\\nPlease retry in 12.281855668s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash-lite'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '12s'}]}}",
-      "attempts": 1,
+      "attempts": 2,
       "images_migrated": false
     },
     "[2022-03-15]靖宁致远泼翰墨慧聪抒雅悦美音惠州一中徐靖慧老师给惠州仲恺中学2022届高三语": {
       "id": "[2022-03-15]靖宁致远泼翰墨慧聪抒雅悦美音惠州一中徐靖慧老师给惠州仲恺中学2022届高三语",
       "source": "raw-articles/[2022-03-15]靖宁致远泼翰墨慧聪抒雅悦美音惠州一中徐靖慧老师给惠州仲恺中学2022届高三语.md",
       "source_date": "2022-03-15",
-      "status": "failed",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-07-20T03:38:07.194722",
+      "output": "processed/2022-03-15-名师传经送宝惠州一中徐靖慧老师助力仲恺中学高三语文备考.md",
+      "title": "名师“传经送宝”：惠州一中徐靖慧老师助力仲恺中学高三语文备考",
       "error": "所有 AI 提供商均失败 - OPENAI: OpenAI API 调用失败: Error code: 400 - {'error': {'code': '1211', 'message': '模型不存在，请检查模型代码。'}}; GEMINI: Gemini API 调用失败: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\\nPlease retry in 55.355522914s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash-lite'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '55s'}]}}",
-      "attempts": 1,
+      "attempts": 2,
       "images_migrated": false
     },
     "[2022-03-14]课堂调研提效率课后总结促备考惠州仲恺中学2022届高三艺体班调研课总结会": {
       "id": "[2022-03-14]课堂调研提效率课后总结促备考惠州仲恺中学2022届高三艺体班调研课总结会",
       "source": "raw-articles/[2022-03-14]课堂调研提效率课后总结促备考惠州仲恺中学2022届高三艺体班调研课总结会.md",
       "source_date": "2022-03-14",
-      "status": "failed",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-07-20T03:38:28.708917",
+      "output": "processed/2022-03-14-惠州仲恺中学调研促教学精细化备考助力艺体生圆梦.md",
+      "title": "惠州仲恺中学：调研促教学，精细化备考助力艺体生圆梦",
       "error": "所有 AI 提供商均失败 - OPENAI: OpenAI API 调用失败: Error code: 400 - {'error': {'code': '1211', 'message': '模型不存在，请检查模型代码。'}}; GEMINI: Gemini API 调用失败: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\\nPlease retry in 39.000544809s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash-lite', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '39s'}]}}",
-      "attempts": 1,
+      "attempts": 2,
       "images_migrated": false
     },
     "[2022-03-07]化学科组开展公开课教学活动一次受益良多的公开教学": {
       "id": "[2022-03-07]化学科组开展公开课教学活动一次受益良多的公开教学",
       "source": "raw-articles/[2022-03-07]化学科组开展公开课教学活动一次受益良多的公开教学.md",
       "source_date": "2022-03-07",
-      "status": "failed",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-07-20T03:38:36.468944",
+      "output": "processed/2022-03-07-惠州仲恺中学化学科组成功举办公开课教研活动.md",
+      "title": "惠州仲恺中学化学科组成功举办公开课教研活动",
       "error": "所有 AI 提供商均失败 - OPENAI: OpenAI API 调用失败: Error code: 400 - {'error': {'code': '1211', 'message': '模型不存在，请检查模型代码。'}}; GEMINI: Gemini API 调用失败: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\\nPlease retry in 22.7647854s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash-lite'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '22s'}]}}",
-      "attempts": 1,
+      "attempts": 2,
       "images_migrated": false
     },
     "[2022-03-05]仲恺中学2022届高三生物调研课活动": {
       "id": "[2022-03-05]仲恺中学2022届高三生物调研课活动",
       "source": "raw-articles/[2022-03-05]仲恺中学2022届高三生物调研课活动.md",
       "source_date": "2022-03-05",
-      "status": "failed",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-07-20T03:38:42.555929",
+      "output": "processed/2022-03-05-惠州仲恺中学生物科组成功举办高三特长班调研课活动.md",
+      "title": "惠州仲恺中学生物科组成功举办高三特长班调研课活动",
       "error": "所有 AI 提供商均失败 - OPENAI: OpenAI API 调用失败: Error code: 400 - {'error': {'code': '1211', 'message': '模型不存在，请检查模型代码。'}}; GEMINI: Gemini API 调用失败: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\\nPlease retry in 6.533655076s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash-lite', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6s'}]}}",
-      "attempts": 1,
+      "attempts": 2,
       "images_migrated": false
     },
     "[2022-02-27]秉承女足精神创造仲中辉煌n惠州仲恺中学2022届高三百日誓师大会": {
@@ -8990,12 +9090,12 @@
       "id": "[2021-12-29]仲恺中学团委顺利进行2021届学生会优秀部门优秀干部表彰活动",
       "source": "raw-articles/[2021-12-29]仲恺中学团委顺利进行2021届学生会优秀部门优秀干部表彰活动.md",
       "source_date": "2021-12-29",
-      "status": "failed",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-07-20T03:39:05.879294",
+      "output": "processed/2021-12-29-惠州仲恺中学团委表彰2021届学生会优秀部门与干部.md",
+      "title": "惠州仲恺中学团委表彰2021届学生会优秀部门与干部",
       "error": "所有 AI 提供商均失败 - OPENAI: OpenAI API 调用失败: Error code: 400 - {'error': {'code': '1211', 'message': '模型不存在，请检查模型代码。'}}; GEMINI: Gemini API 调用失败: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\\nPlease retry in 37.227445384s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash-lite', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '37s'}]}}",
-      "attempts": 1,
+      "attempts": 2,
       "images_migrated": false
     },
     "[2021-12-24]同台接力探索高效课堂": {
@@ -9014,12 +9114,12 @@
       "id": "[2021-12-17]仲中教研展风采同课异构促成长仲恺区高中化学基于不同情境下的同课异构公开课活动",
       "source": "raw-articles/[2021-12-17]仲中教研展风采同课异构促成长仲恺区高中化学基于不同情境下的同课异构公开课活动.md",
       "source_date": "2021-12-17",
-      "status": "failed",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-07-20T03:39:15.219777",
+      "output": "processed/2021-12-16-仲恺中学成功举办高中化学同课异构公开课活动促进教学研讨与成长.md",
+      "title": "仲恺中学成功举办高中化学“同课异构”公开课活动，促进教学研讨与成长",
       "error": "所有 AI 提供商均失败 - OPENAI: OpenAI API 调用失败: Error code: 400 - {'error': {'code': '1211', 'message': '模型不存在，请检查模型代码。'}}; GEMINI: Gemini API 调用失败: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\\nPlease retry in 4.075676607s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash-lite'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '4s'}]}}",
-      "attempts": 1,
+      "attempts": 2,
       "images_migrated": false
     },
     "[2021-12-17]心理有方沟通有道惠州仲恺中学隆重召开20212022学年第一学期日新班主任第": {
@@ -9038,24 +9138,24 @@
       "id": "[2021-12-14]以查促教以导辅学惠州仲恺中学教学常规检查评比暨表彰大会简报",
       "source": "raw-articles/[2021-12-14]以查促教以导辅学惠州仲恺中学教学常规检查评比暨表彰大会简报.md",
       "source_date": "2021-12-14",
-      "status": "failed",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-07-20T03:39:31.118641",
+      "output": "processed/2021-12-13-惠州仲恺中学召开教学常规检查评比暨表彰大会强化教学管理促质量提升.md",
+      "title": "惠州仲恺中学召开教学常规检查评比暨表彰大会，强化教学管理促质量提升",
       "error": "所有 AI 提供商均失败 - OPENAI: OpenAI API 调用失败: Error code: 400 - {'error': {'code': '1211', 'message': '模型不存在，请检查模型代码。'}}; GEMINI: Gemini API 调用失败: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\\nPlease retry in 15.953178038s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash-lite', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '15s'}]}}",
-      "attempts": 1,
+      "attempts": 2,
       "images_migrated": false
     },
     "[2021-12-11]仲恺中学第十九届艺术节才艺大赛顺利落下帷幕": {
       "id": "[2021-12-11]仲恺中学第十九届艺术节才艺大赛顺利落下帷幕",
       "source": "raw-articles/[2021-12-11]仲恺中学第十九届艺术节才艺大赛顺利落下帷幕.md",
       "source_date": "2021-12-11",
-      "status": "failed",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-07-20T03:39:45.953514",
+      "output": "processed/2021-12-11-惠州仲恺中学第十九届艺术节才艺大赛圆满落幕展现青春风采.md",
+      "title": "惠州仲恺中学第十九届艺术节才艺大赛圆满落幕，展现青春风采",
       "error": "所有 AI 提供商均失败 - OPENAI: OpenAI API 调用失败: Error code: 400 - {'error': {'code': '1211', 'message': '模型不存在，请检查模型代码。'}}; GEMINI: Gemini API 调用失败: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\\nPlease retry in 59.790967072s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash-lite'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '59s'}]}}",
-      "attempts": 1,
+      "attempts": 2,
       "images_migrated": false
     },
     "[2021-12-08]仲恺中学举行第十九届艺术节学生百人书画大赛及全校优秀书画摄影作品展": {
@@ -9302,12 +9402,12 @@
       "id": "[2021-11-15]网络安全始于心安全网络践于行n惠州仲恺中学网络安全教育主题活动总结",
       "source": "raw-articles/[2021-11-15]网络安全始于心安全网络践于行n惠州仲恺中学网络安全教育主题活动总结.md",
       "source_date": "2021-11-15",
-      "status": "failed",
-      "processed_at": null,
-      "output": null,
-      "title": null,
+      "status": "completed",
+      "processed_at": "2026-07-20T03:39:55.301088",
+      "output": "processed/2021-10-15-惠州仲恺中学筑牢网络安全防线共建清朗网络空间.md",
+      "title": "惠州仲恺中学：筑牢网络安全防线，共建清朗网络空间",
       "error": "所有 AI 提供商均失败 - OPENAI: OpenAI API 调用失败: Error code: 400 - {'error': {'code': '1211', 'message': '模型不存在，请检查模型代码。'}}; GEMINI: Gemini API 调用失败: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-      "attempts": 1,
+      "attempts": 2,
       "images_migrated": false
     },
     "[2021-11-09]落实消防责任防范安全风险n2021年惠州仲恺中学防震减灾暨消防逃生演练": {
